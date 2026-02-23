@@ -426,7 +426,7 @@ body.rtl-mode .hamburger {
     height: 100vh;
     background: var(--color-surface);
     z-index: 1001;
-    padding: 100px 32px;
+    padding: 24px 32px 32px;
     display: flex;
     flex-direction: column;
     gap: 32px;
@@ -437,6 +437,35 @@ body.rtl-mode .hamburger {
 
 .mobile-nav.active {
     transform: translateX(0);
+}
+
+/* Mobile Nav Back Button */
+.mobile-nav-back {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: none;
+    border: none;
+    color: var(--color-text-muted);
+    font-size: 15px;
+    font-weight: 500;
+    font-family: inherit;
+    cursor: pointer;
+    padding: 10px 0;
+    transition: color 0.3s ease;
+    align-self: flex-start;
+}
+
+.mobile-nav-back:hover {
+    color: var(--color-accent);
+}
+
+.mobile-nav-back svg {
+    transition: transform 0.3s ease;
+}
+
+.mobile-nav-back:hover svg {
+    transform: translateX(-3px);
 }
 
 /* RTL Mobile Nav: Slide from left */
@@ -700,8 +729,8 @@ body.rtl-mode .mobile-dropdown-menu {
 
 /* RESPONSIVE HEADERS — Stable Rebuild */
 
-/* Tablet (768px - 1024px) — Compact Desktop */
-@media (max-width: 1024px) {
+/* Tablet (768px - 1100px) — Compact Desktop */
+@media (max-width: 1100px) {
     .header-container {
         height: 80px;
         padding: 0 24px;
@@ -894,11 +923,36 @@ body.rtl-mode .mobile-dropdown-menu {
         text-align: center !important;
     }
 
+    /* Mobile Grid Stacking (481px–767px) — Prevent overlap on small tablets/phones */
+    .grid-two-col,
+    .grid-three-col,
+    .grid-four-col,
+    .destination-grid,
+    .adventure-grid,
+    .storyteller-grid,
+    .philosophy-grid,
+    .how-we-work-grid,
+    .metrics-container,
+    .mission-grid,
+    .region-grid {
+        grid-template-columns: 1fr !important;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 32px !important;
+    }
+
     /* Mobile Image Scaling */
     .feature-story-img img,
     .destination-grid .card img,
     .adventure-card {
         height: 350px !important;
+    }
+
+    /* Destination grid cards full width */
+    .destination-grid .card,
+    .storyteller-grid .storyteller-item,
+    .philosophy-grid .card {
+        width: 100% !important;
     }
 
     /* Testimonial & Spacing Tweaks */

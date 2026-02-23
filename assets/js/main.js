@@ -58,6 +58,12 @@ document.addEventListener('DOMContentLoaded', () => {
         navOverlay.addEventListener('click', toggleMobileNav);
     }
 
+    // Mobile Nav Back Button
+    const mobileNavBack = document.getElementById('mobile-nav-back');
+    if (mobileNavBack) {
+        mobileNavBack.addEventListener('click', toggleMobileNav);
+    }
+
     // ── Mobile Dropdown logic ───────────────────────────────────────────────
     const mobileDropdownToggles = document.querySelectorAll('.mobile-dropdown-toggle');
     mobileDropdownToggles.forEach(toggle => {

@@ -179,16 +179,67 @@ body.rtl-mode .nav-container {
     flex-direction: row-reverse;
 }
 
-body.rtl-mode .footer-bottom-container {
+body.rtl-mode .header-container {
     flex-direction: row-reverse;
 }
 
-body.rtl-mode .grid-two-col {
-    direction: rtl;
+body.rtl-mode .header-actions {
+    flex-direction: row;
+    /* Avoid double flip if parent is flipped */
+}
+
+/* Ensure Logo children are in correct order when container is flipped */
+body.rtl-mode .logo a {
+    flex-direction: row-reverse;
+}
+
+body.rtl-mode .header-actions {
+    flex-direction: row;
+    gap: 12px;
+}
+
+body.rtl-mode .hamburger {
+    margin-left: 8px;
+    margin-right: 0;
 }
 
 body.rtl-mode .footer-container {
     direction: rtl;
+    text-align: right;
+}
+
+body.rtl-mode .footer-bottom-container {
+    flex-direction: row-reverse;
+}
+
+body.rtl-mode .footer-brand,
+body.rtl-mode .footer-column,
+body.rtl-mode .footer-newsletter {
+    align-items: flex-start !important;
+    text-align: right !important;
+}
+
+body.rtl-mode .footer-logo {
+    flex-direction: row;
+    /* Avoid double flip if direction: rtl is parent */
+}
+
+body.rtl-mode .newsletter-form button {
+    align-self: flex-start;
+    /* flex-start is right side in RTL */
+}
+
+body.ltr-mode .footer-column ul {
+    align-items: flex-end !important;
+}
+
+body.ltr-mode .footer-column .collapsible-trigger {
+    justify-content: flex-end !important;
+    width: 100%;
+}
+
+body.rtl-mode .bottom-right {
+    text-align: left;
 }
 
 body.rtl-mode .section-header:not(.centered) {
@@ -282,9 +333,7 @@ img {
 }
 
 /* RTL: Reverse the entire container as one unit */
-body.rtl-mode .header-container {
-    flex-direction: row-reverse;
-}
+/* RTL: Handled in consolidate section above */
 
 .header-left,
 .header-center,
@@ -566,21 +615,6 @@ body.rtl-mode .mobile-nav-links {
     background: rgba(249, 115, 22, 0.05);
 }
 
-/* RTL: Reverse the entire container as one unit */
-body.rtl-mode .header-container {
-    flex-direction: row-reverse;
-}
-
-body.rtl-mode .header-actions {
-    flex-direction: row-reverse;
-}
-
-/* Header Dropdown Alignment & Stability */
-.nav-links li.has-dropdown .dropdown-menu {
-    top: 100%;
-    margin-top: 0;
-}
-
 /* RTL Dropdown Flipped Icon */
 body.rtl-mode .dropdown-icon {
     transform: rotate(0deg);
@@ -651,31 +685,7 @@ body.rtl-mode .has-dropdown:hover .dropdown-icon {
     margin-bottom: 0;
 }
 
-/* RTL Footer Column Alignment */
-body.rtl-mode .footer {
-    direction: rtl;
-}
-
-body.rtl-mode .footer-column {
-    text-align: right;
-}
-
-body.rtl-mode .footer-column ul {
-    align-items: flex-start;
-}
-
-body.rtl-mode .footer-column .collapsible-trigger {
-    justify-content: flex-start;
-}
-
-body.rtl-mode .footer-brand {
-    align-items: flex-start;
-    text-align: right;
-}
-
-body.rtl-mode .footer-logo {
-    flex-direction: row;
-}
+/* RTL Footer Column Alignment — Handled in consolidated section above */
 
 /* Logical Padding for footer links */
 .footer-column ul li a {
@@ -721,10 +731,10 @@ body.rtl-mode .footer-logo {
 }
 
 body.rtl-mode .mobile-dropdown-menu {
-    padding-left: 0;
-    padding-right: 20px;
-    border-left: none;
-    border-right: 1px solid var(--color-border);
+    padding-inline-start: 0;
+    padding-inline-end: 20px;
+    border-inline-start: none;
+    border-inline-end: 1px solid var(--color-border);
 }
 
 /* RESPONSIVE HEADERS — Stable Rebuild */
@@ -886,7 +896,7 @@ body.rtl-mode .mobile-dropdown-menu {
     }
 
     body.rtl-mode .footer-container {
-        align-items: flex-end !important;
+        align-items: flex-start !important;
         text-align: right !important;
     }
 
@@ -901,7 +911,7 @@ body.rtl-mode .mobile-dropdown-menu {
     body.rtl-mode .footer-brand,
     body.rtl-mode .footer-column,
     body.rtl-mode .footer-newsletter {
-        align-items: flex-end !important;
+        align-items: flex-start !important;
         text-align: right !important;
     }
 
@@ -1167,7 +1177,7 @@ body.rtl-mode .mobile-dropdown-menu {
 }
 
 body.rtl-mode .footer-logo {
-    flex-direction: row-reverse;
+    flex-direction: row;
 }
 
 .footer-logo img {
@@ -1231,13 +1241,13 @@ body.rtl-mode .footer-logo {
 .footer-column ul li a {
     font-size: 14px;
     color: var(--color-text-muted);
-    transition: color 0.25s ease, padding-left 0.2s ease;
+    transition: color 0.25s ease, padding-inline-start 0.2s ease;
     text-decoration: none;
 }
 
 .footer-column ul li a:hover {
     color: var(--color-accent);
-    padding-left: 4px;
+    padding-inline-start: 4px;
 }
 
 /* ---- Newsletter Column ---- */

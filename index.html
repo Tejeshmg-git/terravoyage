@@ -1,0 +1,575 @@
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TerraVoyage | Cinematic Travel Experiences</title>
+    <meta name="description"
+        content="Embark on premium, cinematic travel adventures with TerraVoyage. Explore breathtaking destinations and curated stories.">
+
+    <script>
+        (function () {
+            const savedTheme = localStorage.getItem('theme') || 'dark';
+            document.documentElement.setAttribute('data-theme', savedTheme);
+            // Keep body hidden until main.js restores RTL class → no flash
+            document.documentElement.classList.add('page-loading');
+        })();
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
+    <style>
+        .hero-overlay {
+            transition: background 0.3s ease;
+        }
+
+        [data-theme="light"] .hero-overlay {
+            background: linear-gradient(to bottom, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.4)) !important;
+        }
+
+        [data-theme="light"] .cta-section {
+            background-color: var(--color-surface-alt) !important;
+            border-top: 1px solid rgba(0, 0, 0, 0.05) !important;
+        }
+
+        [data-theme="light"] .hero-content h1,
+        [data-theme="light"] .hero-content p {
+            color: #000 !important;
+        }
+
+        [data-theme="light"] .hero-content .btn-ghost {
+            border-color: rgba(0, 0, 0, 0.4) !important;
+            color: #000 !important;
+        }
+
+        [data-theme="light"] .trust-logo {
+            opacity: 0.4;
+            filter: grayscale(1) invert(1);
+            transition: 0.3s;
+        }
+
+        .feature-story-img img {
+            transition: 0.5s ease;
+        }
+
+        .feature-story-img:hover img {
+            transform: scale(1.05);
+        }
+
+        .trust-logo {
+            opacity: 0.2;
+            filter: grayscale(1);
+            transition: 0.3s;
+        }
+
+        .trust-logo:hover {
+            opacity: 0.8;
+        }
+
+        @media (max-width: 767px) {
+            .trust-logos-grid {
+                grid-template-columns: repeat(2, 1fr) !important;
+            }
+
+            .how-we-work-grid {
+                grid-template-columns: 1fr !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <div class="header-container">
+            <div class="header-left">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="assets/icons/logo.svg" alt="TerraVoyage Logo" class="logo-icon">
+                        <span>TerraVoyage</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="header-center">
+                <nav class="nav-links-wrapper">
+                    <ul class="nav-links">
+                        <li class="has-dropdown">
+                            <a href="index.html">Home <svg class="dropdown-icon" width="10" height="6"
+                                    viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="index.html">Home V1</a></li>
+                                <li><a href="home-v2.html">Home V2</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="pages/destinations.html">Destinations</a></li>
+                        <li><a href="pages/adventures.html">Adventures</a></li>
+                        <li><a href="pages/stories.html">Stories</a></li>
+                        <li><a href="pages/about.html">About</a></li>
+                        <li><a href="pages/collaborate.html">Collaborate</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div class="header-right">
+                <div class="header-actions">
+                    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+                        <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />
+                        </svg>
+                        <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" style="display: none;">
+                            <circle cx="12" cy="12" r="4" />
+                            <path d="M12 2v2" />
+                            <path d="M12 20v2" />
+                            <path d="m4.93 4.93 1.41 1.41" />
+                            <path d="m17.66 17.66 1.41 1.41" />
+                            <path d="M2 12h2" />
+                            <path d="M20 12h2" />
+                            <path d="m6.34 17.66-1.41 1.41" />
+                            <path d="m19.07 4.93-1.41 1.41" />
+                        </svg>
+                    </button>
+                    <button class="rtl-toggle" id="rtl-toggle">LTR</button>
+                    <a href="pages/login.html" class="login-link">Login</a>
+                    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="nav-overlay" id="nav-overlay"></div>
+
+    <div class="mobile-nav" id="mobile-nav">
+        <div class="mobile-nav-links">
+            <div class="has-dropdown">
+                <a href="#" class="mobile-dropdown-toggle">Home <svg class="dropdown-icon" width="12" height="8"
+                        viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1 1L6 6L11 1" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg></a>
+                <ul class="mobile-dropdown-menu">
+                    <li><a href="index.html">Home V1</a></li>
+                    <li><a href="home-v2.html">Home V2</a></li>
+                </ul>
+            </div>
+            <a href="pages/destinations.html">Destinations</a>
+            <a href="pages/adventures.html">Adventures</a>
+            <a href="pages/stories.html">Stories</a>
+            <a href="pages/about.html">About</a>
+            <a href="pages/collaborate.html">Collaborate</a>
+            <a href="pages/login.html">Login</a>
+        </div>
+        <div class="mobile-actions" style="margin-top: auto;">
+            <button class="rtl-toggle" id="rtl-toggle-mobile" style="margin-bottom: var(--space-4);">LTR</button>
+            <a href="pages/destinations.html" class="btn-primary" style="display: block; text-align: center;">Start
+                Exploring</a>
+        </div>
+    </div>
+
+    <main>
+        <!-- SECTION 1 — HERO -->
+        <section class="hero"
+            style="position: relative; min-height: 90vh; display: flex; align-items: center; justify-content: center; text-align: center; overflow: hidden; background: var(--color-bg);">
+            <div class="hero-content"
+                style="position: relative; z-index: 3; max-width: 900px; padding: 0 var(--space-4);">
+                <h1
+                    style="font-size: clamp(42px, 7vw, 68px); font-weight: 800; letter-spacing: -1px; margin-bottom: var(--space-4); line-height: 1.1;">
+                    The World Is Not a Destination.<br>It’s a Narrative.</h1>
+                <p
+                    style="font-size: clamp(16px, 2vw, 20px); color: rgba(255,255,255,0.9); margin-bottom: var(--space-8); line-height: 1.7; max-width: 750px; margin-left: auto; margin-right: auto;">
+                    We craft documentary-driven journeys that reveal the soul of every landscape — and the voices that
+                    give it meaning.</p>
+                <div class="hero-btns"
+                    style="display: flex; gap: var(--space-4); justify-content: center; flex-wrap: wrap;">
+                    <a href="pages/destinations.html" class="btn-primary"
+                        style="padding: 18px 42px; font-size: 16px; min-width: 220px;">Explore Destinations</a>
+                    <a href="pages/about.html" class="btn-ghost"
+                        style="padding: 18px 42px; font-size: 16px; min-width: 220px;">Watch Our Story</a>
+                </div>
+            </div>
+            <div class="hero-overlay"
+                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.65)); z-index: 2;">
+            </div>
+            <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&q=80&w=1920"
+                alt="Cinematic landscape" class="hero-bg"
+                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1;">
+        </section>
+
+        <!-- SECTION 1.5 — FEATURED STORY -->
+        <section class="section-container" style="padding: 100px var(--space-3);">
+            <div class="grid-two-col" style="gap: var(--space-12); align-items: center;">
+                <div class="feature-story-img"
+                    style="overflow: hidden; border-radius: var(--border-radius); border: 1px solid var(--color-border);">
+                    <img src="assets/images/Home-imgs/Nomads of Ladakh.jpg" alt="Nomads of Ladakh"
+                        style="width: 100%; height: 600px; object-fit: cover; object-position: center;">
+                </div>
+                <div class="feature-story-text" style="padding: var(--space-4);">
+                    <span class="hero-label" style="margin-bottom: var(--space-3);">Featured Story</span>
+                    <h2 style="font-size: clamp(32px, 4vw, 42px); margin-bottom: var(--space-4); line-height: 1.2;">
+                        Living with the Nomads of Ladakh</h2>
+                    <p
+                        style="font-size: 17px; color: var(--color-text-muted); margin-bottom: var(--space-8); line-height: 1.8;">
+                        Beyond the high Himalayan passes lies a world defined by the seasons and the sacred geometry of
+                        the landscape. Our team spent three months documenting the resilient Zanskari nomads, capturing
+                        a way of life that has remained unchanged for centuries.</p>
+                    <a href="pages/story-detail.html" class="btn-secondary" style="padding: 14px 32px;">Read the
+                        Story</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2 — BRAND INTRO -->
+        <section class="section-container" style="text-align: center; max-width: 700px; padding: 100px var(--space-3);">
+            <div class="section-header centered">
+                <h2 style="font-size: 36px; margin-bottom: var(--space-4);">Travel, Redefined.</h2>
+            </div>
+            <p style="font-size: 18px; color: var(--color-text-muted); line-height: 1.8;">At TerraVoyage, we move beyond
+                tourism. We travel slowly, listen deeply, and document the human stories hidden between landscapes.</p>
+        </section>
+
+        <!-- SECTION 3 — CORE PILLARS -->
+        <section class="section-container bg-surface-alt" style="padding: 100px var(--space-3);">
+            <div class="section-header centered">
+                <h2 style="margin-bottom: var(--space-8);">Our Philosophy</h2>
+            </div>
+            <div class="philosophy-grid">
+                <div class="card"
+                    style="padding: var(--space-6); background: var(--color-surface); border: 1px solid var(--color-border); height: 100%; display: flex; flex-direction: column; align-items: center; text-align: center;">
+                    <div class="icon-box" style="margin-bottom: var(--space-4); color: var(--color-accent);">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10" />
+                            <path
+                                d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+                            <path d="M2 12h20" />
+                        </svg>
+                    </div>
+                    <h3 style="margin-bottom: var(--space-2); font-size: 20px;">Authentic Exploration</h3>
+                    <p style="font-size: 14px; color: var(--color-text-muted);">Going beyond the map to discover the
+                        stories that haven't been told yet.</p>
+                </div>
+                <div class="card"
+                    style="padding: var(--space-6); background: var(--color-surface); border: 1px solid var(--color-border); height: 100%; display: flex; flex-direction: column; align-items: center; text-align: center;">
+                    <div class="icon-box" style="margin-bottom: var(--space-4); color: var(--color-accent);">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M17 6.1H3" />
+                            <path d="M21 12.1H3" />
+                            <path d="M15 18.1H3" />
+                        </svg>
+                    </div>
+                    <h3 style="margin-bottom: var(--space-2); font-size: 20px;">Cultural Depth</h3>
+                    <p style="font-size: 14px; color: var(--color-text-muted);">A deep respect for local wisdom and the
+                        preservation of ancestral traditions.</p>
+                </div>
+                <div class="card"
+                    style="padding: var(--space-6); background: var(--color-surface); border: 1px solid var(--color-border); height: 100%; display: flex; flex-direction: column; align-items: center; text-align: center;">
+                    <div class="icon-box" style="margin-bottom: var(--space-4); color: var(--color-accent);">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h18a2 2 0 0 1 2 2z" />
+                            <circle cx="12" cy="12" r="3" />
+                        </svg>
+                    </div>
+                    <h3 style="margin-bottom: var(--space-2); font-size: 20px;">Visual Storytelling</h3>
+                    <p style="font-size: 14px; color: var(--color-text-muted);">Cinema-grade documentation that captures
+                        the emotional resonance of every mile.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3.5 — HOW WE WORK -->
+        <section class="section-container" style="padding: 80px var(--space-3); text-align: center;">
+            <div class="section-header centered">
+                <h2 style="margin-bottom: var(--space-8);">How We Work</h2>
+            </div>
+            <div class="how-we-work-grid">
+                <div class="work-step">
+                    <div
+                        style="font-size: 16px; font-weight: 800; color: var(--color-accent); margin-bottom: var(--space-2); font-family: var(--font-heading);">
+                        01</div>
+                    <h3 style="font-size: 20px; margin-bottom: var(--space-3);">Research & Respect</h3>
+                    <p style="font-size: 15px; color: var(--color-text-muted); line-height: 1.7;">We spend months
+                        building relationships with local guides and communities before filming begins.</p>
+                </div>
+                <div class="work-step">
+                    <div
+                        style="font-size: 16px; font-weight: 800; color: var(--color-accent); margin-bottom: var(--space-2); font-family: var(--font-heading);">
+                        02</div>
+                    <h3 style="font-size: 20px; margin-bottom: var(--space-3);">Immersive Exploration</h3>
+                    <p style="font-size: 15px; color: var(--color-text-muted); line-height: 1.7;">We travel slowly,
+                        staying as guests in local homes to capture the unscripted reality of life.</p>
+                </div>
+                <div class="work-step">
+                    <div
+                        style="font-size: 16px; font-weight: 800; color: var(--color-accent); margin-bottom: var(--space-2); font-family: var(--font-heading);">
+                        03</div>
+                    <h3 style="font-size: 20px; margin-bottom: var(--space-3);">Documentary Craft</h3>
+                    <p style="font-size: 15px; color: var(--color-text-muted); line-height: 1.7;">Each journey is
+                        meticulously edited into a high-end cinematic narrative that honors the source.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4 — FEATURED DESTINATIONS -->
+        <section class="section-container" style="padding: 80px var(--space-3);">
+            <div class="section-header">
+                <h2>Featured Journeys</h2>
+            </div>
+            <div class="destination-grid">
+                <div class="card" style="position: relative; overflow: hidden; border-radius: var(--border-radius);">
+                    <img src="assets/images/Adventures/patagonia.jpg" alt="Patagonia"
+                        style="width: 100%; height: 400px; object-fit: cover; object-position: center; transition: transform 0.5s ease;">
+                    <div
+                        style="position: absolute; bottom: 0; left: 0; width: 100%; padding: var(--space-4); background: linear-gradient(transparent, rgba(0,0,0,0.8));">
+                        <h3 style="color: #fff; margin-bottom: 4px;">Patagonia, Chile</h3>
+                        <p style="font-size: 14px; color: rgba(255,255,255,0.7);">Untamed wilderness at the end of the
+                            world.
+                        </p>
+                    </div>
+                </div>
+                <div class="card" style="position: relative; overflow: hidden; border-radius: var(--border-radius);">
+                    <img src="assets/images/Adventures/ladakh.jpg" alt="Ladakh"
+                        style="width: 100%; height: 400px; object-fit: cover; object-position: center; transition: transform 0.5s ease;">
+                    <div
+                        style="position: absolute; bottom: 0; left: 0; width: 100%; padding: var(--space-4); background: linear-gradient(transparent, rgba(0,0,0,0.8));">
+                        <h3 style="color: #fff; margin-bottom: 4px;">Ladakh, India</h3>
+                        <p style="font-size: 14px; color: rgba(255,255,255,0.7);">High Himalayan culture and monastic
+                            peaks.</p>
+                    </div>
+                </div>
+                <div class="card" style="position: relative; overflow: hidden; border-radius: var(--border-radius);">
+                    <img src="assets/images/Adventures/vik,iceland.jpg" alt="Iceland"
+                        style="width: 100%; height: 400px; object-fit: cover; object-position: center; transition: transform 0.5s ease;">
+                    <div
+                        style="position: absolute; bottom: 0; left: 0; width: 100%; padding: var(--space-4); background: linear-gradient(transparent, rgba(0,0,0,0.8));">
+                        <h3 style="color: #fff; margin-bottom: 4px;">Vik, Iceland</h3>
+                        <p style="font-size: 14px; color: rgba(255,255,255,0.7);">The land of fire and ice.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 5 — STORYTELLERS PREVIEW -->
+        <section class="section-container bg-surface-alt" style="padding: 100px var(--space-3); text-align: center;">
+            <div class="section-header centered">
+                <h2>Meet the Storytellers</h2>
+            </div>
+            <div class="storyteller-grid" style="margin-top: var(--space-8);">
+                <div class="storyteller-item" style="display: flex; flex-direction: column; align-items: center;">
+                    <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80&w=300"
+                        alt="Elias Vance"
+                        style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover; margin-bottom: var(--space-4); border: 2px solid var(--color-accent);">
+                    <h3 style="font-size: 20px; margin-bottom: 4px;">Elias Vance</h3>
+                    <p
+                        style="color: var(--color-accent); font-size: 12px; font-weight: 600; text-transform: uppercase; margin-bottom: var(--space-2);">
+                        Founder & Director</p>
+                    <p style="font-size: 14px; color: var(--color-text-muted); max-width: 320px; line-height: 1.6;">A
+                        filmmaker
+                        documenting the world's remote edges.</p>
+                </div>
+                <div class="storyteller-item" style="display: flex; flex-direction: column; align-items: center;">
+                    <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=300"
+                        alt="Julian Moretti"
+                        style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover; margin-bottom: var(--space-4); border: 2px solid var(--color-accent);">
+                    <h3 style="font-size: 20px; margin-bottom: 4px;">Julian Moretti</h3>
+                    <p
+                        style="color: var(--color-accent); font-size: 12px; font-weight: 600; text-transform: uppercase; margin-bottom: var(--space-2);">
+                        Lead Photographer</p>
+                    <p style="font-size: 14px; color: var(--color-text-muted); max-width: 320px; line-height: 1.6;">
+                        Capturing raw light in
+                        extreme environments.</p>
+                </div>
+                <div class="storyteller-item" style="display: flex; flex-direction: column; align-items: center;">
+                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=300"
+                        alt="Sofia Romano"
+                        style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover; margin-bottom: var(--space-4); border: 2px solid var(--color-accent);">
+                    <h3 style="font-size: 20px; margin-bottom: 4px;">Sofia Romano</h3>
+                    <p
+                        style="color: var(--color-accent); font-size: 12px; font-weight: 600; text-transform: uppercase; margin-bottom: var(--space-2);">
+                        Cultural Liaison</p>
+                    <p style="font-size: 14px; color: var(--color-text-muted); max-width: 320px; line-height: 1.6;">
+                        Empowering indigenous
+                        voices globally.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 6 — IMPACT METRICS -->
+        <section class="metrics-band">
+            <div class="metrics-container">
+                <div style="text-align: center;">
+                    <div style="font-size: 48px; font-weight: 800; color: var(--color-accent);">50+</div>
+                    <p
+                        style="font-size: 12px; text-transform: uppercase; color: var(--color-text-muted); letter-spacing: 2px;">
+                        Destinations</p>
+                </div>
+                <div style="text-align: center;">
+                    <div style="font-size: 48px; font-weight: 800; color: var(--color-accent);">4</div>
+                    <p
+                        style="font-size: 12px; text-transform: uppercase; color: var(--color-text-muted); letter-spacing: 2px;">
+                        Continents</p>
+                </div>
+                <div style="text-align: center;">
+                    <div style="font-size: 48px; font-weight: 800; color: var(--color-accent);">100+</div>
+                    <p
+                        style="font-size: 12px; text-transform: uppercase; color: var(--color-text-muted); letter-spacing: 2px;">
+                        Hours Filmed</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 6.5 — TESTIMONIAL -->
+        <section class="section-container" style="padding: 100px var(--space-3); text-align: center;">
+            <div
+                style="max-width: 900px; margin: 0 auto; padding: var(--space-12) var(--space-6); background: var(--color-surface-alt); border-radius: 20px; border: 1px solid var(--color-border);">
+                <div
+                    style="color: var(--color-accent); font-size: 48px; margin-bottom: var(--space-4); font-family: var(--font-heading);">
+                    “</div>
+                <p
+                    style="font-size: clamp(20px, 4vw, 32px); font-family: var(--font-heading); font-style: italic; line-height: 1.5; margin-bottom: var(--space-8); max-width: 700px; margin-left: auto; margin-right: auto;">
+                    TerraVoyage doesn’t just document places — they document humanity.</p>
+                <p
+                    style="font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; color: var(--color-text-muted);">
+                    — Cultural Partner, Nepal</p>
+            </div>
+        </section>
+
+        <!-- SECTION 7 — FINAL CTA -->
+        <section class="cta-section">
+            <div class="cta-internal-container">
+                <h2 style="font-size: clamp(32px, 5vw, 48px); margin-bottom: var(--space-4); line-height: 1.2;">Let’s
+                    Tell Stories That Matter.</h2>
+                <p
+                    style="font-size: clamp(16px, 2vw, 18px); color: var(--color-text-muted); margin-bottom: var(--space-8); max-width: 550px; margin-left: auto; margin-right: auto;">
+                    Meaningful travel begins with intention. Join us in documenting the world's most resonant
+                    narratives.</p>
+                <a href="pages/collaborate.html" class="btn-primary"
+                    style="padding: 18px 42px; font-size: 16px;">Collaborate With Us</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+
+            <!-- Brand -->
+            <div class="footer-brand">
+                <a href="index.html" class="footer-logo">
+                    <img src="assets/icons/logo.svg" alt="TerraVoyage Logo">
+                    TerraVoyage
+                </a>
+                <p>TerraVoyage is a documentary-driven travel platform dedicated to exploring remote cultures, untold
+                    histories, and human stories shaped by landscape.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Instagram">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                        </svg>
+                    </a>
+                    <a href="#" aria-label="YouTube">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                                d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.4a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z" />
+                            <polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" />
+                        </svg>
+                    </a>
+                    <a href="#" aria-label="X / Twitter">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                            fill="currentColor">
+                            <path
+                                d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.748l7.73-8.835L2.25 2.25h6.897l4.264 5.638 5.833-5.638Zm-1.161 17.52h1.833L7.084 4.126H5.117Z" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Explore -->
+            <div class="footer-column">
+                <h4>Explore</h4>
+                <ul>
+                    <li><a href="pages/destinations.html">Destinations</a></li>
+                    <li><a href="pages/adventures.html">Adventures</a></li>
+                    <li><a href="pages/stories.html">Stories</a></li>
+                    <li><a href="pages/about.html">About</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h4>Company</h4>
+                <ul>
+                    <li class="collapsible-wrapper">
+                        <div class="collapsible-trigger">
+                            Home <svg class="dropdown-icon" width="10" height="6" viewBox="0 0 10 6" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                        <ul class="collapsible-content">
+                            <li><a href="index.html">Home V1</a></li>
+                            <li><a href="home-v2.html">Home V2</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="pages/about.html">Our Story</a></li>
+                    <li><a href="pages/collaborate.html">Collaborate</a></li>
+                    <li><a href="pages/login.html">Login</a></li>
+                    <li><a href="404.html">404 Page</a></li>
+                </ul>
+            </div>
+
+            <!-- Newsletter -->
+            <div class="footer-newsletter">
+                <h4>Stay in the Know</h4>
+                <p>Join our newsletter for the latest travel stories and expeditions.</p>
+                <form class="newsletter-form" onsubmit="return false;">
+                    <input type="email" placeholder="Your email address" required>
+                    <button type="submit" class="btn-primary">Subscribe</button>
+                </form>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <div class="footer-bottom-container">
+                <div class="bottom-left">
+                    <span>&copy; 2024 TerraVoyage. All rights reserved.</span>
+                </div>
+                <div class="bottom-center">
+                    <a href="#">Privacy Policy</a>
+                    <span class="separator">|</span>
+                    <a href="#">Terms &amp; Conditions</a>
+                    <span class="separator">|</span>
+                    <a href="#">Cookie Policy</a>
+                </div>
+                <div class="bottom-right">
+                    <span>Designed for Cinematic Excellence.</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>

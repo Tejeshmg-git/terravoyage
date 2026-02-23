@@ -1,0 +1,467 @@
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Kit | TerraVoyage</title>
+    <meta name="description"
+        content="TerraVoyage Media Kit: Audience demographics, platform reach, and brand overview for production partners.">
+
+    <script>
+        (function () {
+            const savedTheme = localStorage.getItem('theme') || 'dark';
+            document.documentElement.setAttribute('data-theme', savedTheme);
+            // Keep body hidden until main.js restores RTL class → no flash
+            document.documentElement.classList.add('page-loading');
+        })();
+    </script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="icon" type="image/svg+xml" href="../assets/icons/favicon.svg">
+    <style>
+        .media-kit-container {
+            max-width: 850px;
+            margin: 0 auto;
+            padding: 0 var(--space-6);
+        }
+
+
+        .media-hero {
+            padding: 100px 0 60px;
+            text-align: center;
+        }
+
+        .media-hero h1,
+        .media-hero p,
+        .media-hero .hero-label {
+            color: #fff;
+        }
+
+        .media-hero h1 {
+            font-size: clamp(36px, 6vw, 52px);
+            margin-bottom: var(--space-4);
+            font-family: var(--font-heading);
+        }
+
+        .section-padding {
+            padding: 70px 0;
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .section-padding:last-of-type {
+            border-bottom: none;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--space-6);
+            margin-top: var(--space-8);
+        }
+
+        .stat-card {
+            padding: var(--space-6);
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: var(--border-radius);
+            text-align: center;
+        }
+
+        .stat-card .value {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--color-accent);
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        .stat-card .label {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--color-text-muted);
+        }
+
+        .demo-list {
+            list-style: none;
+            padding: 0;
+            margin-top: var(--space-6);
+        }
+
+        .demo-list li {
+            padding: var(--space-3) 0;
+            border-bottom: 1px solid var(--color-border);
+            display: flex;
+            justify-content: space-between;
+            font-size: 15px;
+        }
+
+        .demo-list li:last-child {
+            border-bottom: none;
+        }
+
+        .platform-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--space-6);
+            margin-top: var(--space-8);
+        }
+
+        .platform-item {
+            padding: var(--space-6);
+            background: var(--color-bg);
+            border-radius: var(--border-radius);
+        }
+
+        .platform-item h4 {
+            font-size: 16px;
+            margin-bottom: 4px;
+            color: var(--color-accent);
+        }
+
+        .platform-item p {
+            font-size: 13px;
+            color: var(--color-text-muted);
+            line-height: 1.6;
+        }
+
+        @media (max-width: 1024px) {
+            .stats-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: var(--space-4);
+            }
+
+            .platform-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 539px) {
+            .stats-grid {
+                grid-template-columns: 1fr;
+                gap: var(--space-6);
+            }
+
+            .platform-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body class="media-kit-page">
+    <header class="header">
+        <div class="header-container">
+            <div class="header-left">
+                <div class="logo">
+                    <a href="../index.html">
+                        <img src="../assets/icons/logo.svg" alt="TerraVoyage Logo" class="logo-icon">
+                        <span>TerraVoyage</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="header-center">
+                <nav class="nav-links-wrapper">
+                    <ul class="nav-links">
+                        <li class="has-dropdown">
+                            <a href="../index.html">Home <svg class="dropdown-icon" width="10" height="6"
+                                    viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="../index.html">Home V1</a></li>
+                                <li><a href="../home-v2.html">Home V2</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="destinations.html">Destinations</a></li>
+                        <li><a href="adventures.html">Adventures</a></li>
+                        <li><a href="stories.html">Stories</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="collaborate.html">Collaborate</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div class="header-right">
+                <div class="header-actions">
+                    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+                        <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />
+                        </svg>
+                        <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" style="display: none;">
+                            <circle cx="12" cy="12" r="4" />
+                            <path d="M12 2v2" />
+                            <path d="M12 20v2" />
+                            <path d="m4.93 4.93 1.41 1.41" />
+                            <path d="m17.66 17.66 1.41 1.41" />
+                            <path d="M2 12h2" />
+                            <path d="M20 12h2" />
+                            <path d="m6.34 17.66-1.41 1.41" />
+                            <path d="m19.07 4.93-1.41 1.41" />
+                        </svg>
+                    </button>
+                    <button class="rtl-toggle" id="rtl-toggle">LTR</button>
+                    <a href="login.html" class="login-link">Login</a>
+                    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="nav-overlay" id="nav-overlay"></div>
+
+    <div class="mobile-nav" id="mobile-nav">
+        <div class="mobile-nav-links">
+            <div class="has-dropdown">
+                <a href="#" class="mobile-dropdown-toggle">Home <svg class="dropdown-icon" width="12" height="8"
+                        viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1 1L6 6L11 1" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg></a>
+                <ul class="mobile-dropdown-menu">
+                    <li><a href="../index.html">Home V1</a></li>
+                    <li><a href="../home-v2.html">Home V2</a></li>
+                </ul>
+            </div>
+            <a href="destinations.html">Destinations</a>
+            <a href="adventures.html">Adventures</a>
+            <a href="stories.html">Stories</a>
+            <a href="about.html">About</a>
+            <a href="collaborate.html">Collaborate</a>
+            <a href="login.html">Login</a>
+        </div>
+        <div class="mobile-actions" style="margin-top: auto;">
+            <button class="rtl-toggle" id="rtl-toggle-mobile" style="margin-bottom: var(--space-4);">LTR</button>
+            <a href="destinations.html" class="btn-primary" style="display: block; text-align: center;">Start
+                Exploring</a>
+        </div>
+    </div>
+
+    <main>
+        <!-- SECTION 1 — HERO -->
+        <section class="media-hero">
+            <div class="media-kit-container">
+                <span class="hero-label" style="margin-bottom: 20px;">Brand Assets</span>
+                <h1>TerraVoyage Media Kit</h1>
+                <p style="font-size: 18px; color: var(--color-text-muted); max-width: 600px; margin: 0 auto;">
+                    Comprehensive brand overview, audience metrics, and platform reach for partners and journalists.</p>
+            </div>
+        </section>
+
+        <!-- SECTION 2 — ABOUT TERRAVOYAGE -->
+        <section class="section-padding">
+            <div class="media-kit-container">
+                <h2 style="font-family: var(--font-heading); font-size: 28px; margin-bottom: var(--space-4);">About
+                    TerraVoyage</h2>
+                <p style="font-size: 16px; color: var(--color-text-muted); line-height: 1.8;">TerraVoyage is a premium
+                    documentary-led travel platform dedicated to authentic field narratives. We prioritize immersion
+                    over highlights, staying longer and listening deeper to document the authentic pulse of communities
+                    and landscapes across the furthest horizons.</p>
+            </div>
+        </section>
+
+        <!-- SECTION 3 — AUDIENCE DEMOGRAPHICS -->
+        <section class="section-padding" style="background: var(--color-surface);">
+            <div class="media-kit-container">
+                <h2 style="font-family: var(--font-heading); font-size: 28px; margin-bottom: var(--space-2);">Audience
+                    Demographics</h2>
+                <p style="font-size: 14px; color: var(--color-text-muted);">High-engagement, purpose-driven community
+                    focused on culture and sustainability.</p>
+
+                <ul class="demo-list">
+                    <li>
+                        <span>Global Reach</span>
+                        <strong style="color: var(--color-text);">500k+ Monthly Uniques</strong>
+                    </li>
+                    <li>
+                        <span>Core Age Group</span>
+                        <strong style="color: var(--color-text);">25 — 45 Years</strong>
+                    </li>
+                    <li>
+                        <span>Key Interests</span>
+                        <strong style="color: var(--color-text);">Adventure, Culture, Ethics</strong>
+                    </li>
+                    <li>
+                        <span>Avg. Session Duration</span>
+                        <strong style="color: var(--color-text);">4m 20s</strong>
+                    </li>
+                </ul>
+
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <span class="value">68%</span>
+                        <span class="label">North America & EU</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="value">42%</span>
+                        <span class="label">Returning Readers</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="value">12k+</span>
+                        <span class="label">Newsletter Subs</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4 — PLATFORM REACH -->
+        <section class="section-padding">
+            <div class="media-kit-container">
+                <h2 style="font-family: var(--font-heading); font-size: 28px; margin-bottom: var(--space-4);">Platform
+                    Reach</h2>
+                <div class="platform-grid">
+                    <div class="platform-item">
+                        <h4>YouTube</h4>
+                        <p>Cinematic long-form features and expedition diaries with 150k+ subscribers.</p>
+                    </div>
+                    <div class="platform-item">
+                        <h4>Instagram</h4>
+                        <p>Real-time field updates and high-impact photography reaching 300k+ explorers.</p>
+                    </div>
+                    <div class="platform-item">
+                        <h4>Website</h4>
+                        <p>The central hub for archived narratives and interactive destination guides.</p>
+                    </div>
+                    <div class="platform-item">
+                        <h4>Documentary Distribution</h4>
+                        <p>Partnerships with global streaming networks for feature-length cultural content.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 5 — DOWNLOAD SECTION -->
+        <section class="section-padding" style="text-align: center; background: var(--color-surface-alt);">
+            <div class="media-kit-container">
+                <h2 style="font-family: var(--font-heading); font-size: 32px; margin-bottom: var(--space-4);">Ready to
+                    Partner?</h2>
+                <p style="color: var(--color-text-muted); margin-bottom: var(--space-8);">Download our complete 2024
+                    Media Kit for detailed rate cards and partnership opportunities.</p>
+                <a href="#" class="btn-primary" style="padding: 16px 50px; font-weight: 700;">Download PDF Media Kit</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+
+            <!-- Brand -->
+            <div class="footer-brand">
+                <a href="../index.html" class="footer-logo">
+                    <img src="../assets/icons/logo.svg" alt="TerraVoyage Logo">
+                    TerraVoyage
+                </a>
+                <p>TerraVoyage is a documentary-driven travel platform dedicated to exploring remote cultures, untold
+                    histories, and human stories shaped by landscape.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Instagram">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                        </svg>
+                    </a>
+                    <a href="#" aria-label="YouTube">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                                d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.4a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z" />
+                            <polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" />
+                        </svg>
+                    </a>
+                    <a href="#" aria-label="X / Twitter">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                            fill="currentColor">
+                            <path
+                                d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.748l7.73-8.835L2.25 2.25h6.897l4.264 5.638 5.833-5.638Zm-1.161 17.52h1.833L7.084 4.126H5.117Z" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Explore -->
+            <div class="footer-column">
+                <h4>Explore</h4>
+                <ul>
+                    <li><a href="destinations.html">Destinations</a></li>
+                    <li><a href="adventures.html">Adventures</a></li>
+                    <li><a href="stories.html">Stories</a></li>
+                    <li><a href="about.html">About</a></li>
+                </ul>
+            </div>
+
+            <!-- Company -->
+            <div class="footer-column">
+                <h4>Company</h4>
+                <ul>
+                    <li class="collapsible-wrapper">
+                        <div class="collapsible-trigger">
+                            Home <svg class="dropdown-icon" width="10" height="6" viewBox="0 0 10 6" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                        <ul class="collapsible-content">
+                            <li><a href="../index.html">Home V1</a></li>
+                            <li><a href="../home-v2.html">Home V2</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="about.html">Our Story</a></li>
+                    <li><a href="collaborate.html">Collaborate</a></li>
+                    <li><a href="login.html">Login</a></li>
+                    <li><a href="../404.html">404 Page</a></li>
+                </ul>
+            </div>
+
+            <!-- Newsletter -->
+            <div class="footer-newsletter">
+                <h4>Stay in the Know</h4>
+                <p>Join our newsletter for the latest travel stories and expeditions.</p>
+                <form class="newsletter-form" onsubmit="return false;">
+                    <input type="email" placeholder="Your email address" required>
+                    <button type="submit" class="btn-primary">Subscribe</button>
+                </form>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <div class="footer-bottom-container">
+                <div class="bottom-left">
+                    <span>&copy; 2024 TerraVoyage. All rights reserved.</span>
+                </div>
+                <div class="bottom-center">
+                    <a href="#">Privacy Policy</a>
+                    <span class="separator">|</span>
+                    <a href="#">Terms &amp; Conditions</a>
+                    <span class="separator">|</span>
+                    <a href="#">Cookie Policy</a>
+                </div>
+                <div class="bottom-right">
+                    <span>Designed for Cinematic Excellence.</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 Page Not Found | TerraVoyage</title>
+
+    <!-- Theme initialization -->
+    <script>
+        (function () {
+            const savedTheme = localStorage.getItem('theme') || 'dark';
+            document.documentElement.setAttribute('data-theme', savedTheme);
+            document.documentElement.classList.add('page-loading');
+        })();
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Poppins:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
+
+    <style>
+        .error-section {
+            min-height: calc(100vh - var(--navbar-height));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: var(--space-20) var(--space-6);
+            text-align: center;
+            background: var(--color-bg);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .error-bg-glow {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(249, 115, 22, 0.08) 0%, transparent 70%);
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .error-content {
+            position: relative;
+            z-index: 2;
+            max-width: 600px;
+        }
+
+        .error-code {
+            font-family: var(--font-heading);
+            font-size: clamp(80px, 15vw, 150px);
+            font-weight: 800;
+            line-height: 1;
+            margin-bottom: var(--space-4);
+            background: linear-gradient(to bottom, var(--color-text), var(--color-text-muted));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            opacity: 0.8;
+        }
+
+        .error-title {
+            font-family: var(--font-heading);
+            font-size: clamp(28px, 5vw, 42px);
+            margin-bottom: var(--space-6);
+            color: var(--color-text);
+        }
+
+        .error-message {
+            color: var(--color-text-muted);
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: var(--space-10);
+        }
+
+        .error-btn {
+            display: inline-block;
+            padding: 16px 40px;
+            font-size: 15px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 600;
+        }
+    </style>
+</head>
+
+<body class="error-page-mobile">
+    <header class="header">
+        <div class="header-container">
+            <div class="header-left">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="assets/icons/logo.svg" alt="TerraVoyage Logo" class="logo-icon">
+                        <span>TerraVoyage</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="header-center">
+                <nav class="nav-links-wrapper">
+                    <ul class="nav-links">
+                        <li class="has-dropdown">
+                            <a href="index.html">Home <svg class="dropdown-icon" width="10" height="6"
+                                    viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="index.html">Home V1</a></li>
+                                <li><a href="home-v2.html">Home V2</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="pages/destinations.html">Destinations</a></li>
+                        <li><a href="pages/adventures.html">Adventures</a></li>
+                        <li><a href="pages/stories.html">Stories</a></li>
+                        <li><a href="pages/about.html">About</a></li>
+                        <li><a href="pages/collaborate.html">Collaborate</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div class="header-right">
+                <div class="header-actions">
+                    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+                        <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />
+                        </svg>
+                        <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" style="display: none;">
+                            <circle cx="12" cy="12" r="4" />
+                            <path d="M12 2v2" />
+                            <path d="M12 20v2" />
+                            <path d="m4.93 4.93 1.41 1.41" />
+                            <path d="m17.66 17.66 1.41 1.41" />
+                            <path d="M2 12h2" />
+                            <path d="M20 12h2" />
+                            <path d="m6.34 17.66-1.41 1.41" />
+                            <path d="m19.07 4.93-1.41 1.41" />
+                        </svg>
+                    </button>
+                    <button class="rtl-toggle" id="rtl-toggle">LTR</button>
+                    <a href="pages/login.html" class="login-link">Login</a>
+                    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="nav-overlay" id="nav-overlay"></div>
+
+    <div class="mobile-nav" id="mobile-nav">
+        <div class="mobile-nav-links">
+            <div class="has-dropdown">
+                <a href="#" class="mobile-dropdown-toggle">Home <svg class="dropdown-icon" width="12" height="8"
+                        viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1 1L6 6L11 1" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg></a>
+                <ul class="mobile-dropdown-menu">
+                    <li><a href="index.html">Home V1</a></li>
+                    <li><a href="home-v2.html">Home V2</a></li>
+                </ul>
+            </div>
+            <a href="pages/destinations.html">Destinations</a>
+            <a href="pages/adventures.html">Adventures</a>
+            <a href="pages/stories.html">Stories</a>
+            <a href="pages/about.html">About</a>
+            <a href="pages/collaborate.html">Collaborate</a>
+            <a href="pages/login.html">Login</a>
+        </div>
+        <div class="mobile-actions" style="margin-top: auto;">
+            <button class="rtl-toggle" id="rtl-toggle-mobile" style="margin-bottom: var(--space-4);">LTR</button>
+            <a href="pages/destinations.html" class="btn-primary" style="display: block; text-align: center;">Start
+                Exploring</a>
+        </div>
+    </div>
+
+    <main>
+        <section class="error-section">
+            <div class="error-bg-glow"></div>
+            <div class="error-content">
+                <div class="error-code">404</div>
+                <h1 class="error-title">Page Not Found</h1>
+                <p class="error-message">
+                    The path you followed doesn’t lead anywhere. Let’s guide you back to the narrative.
+                </p>
+                <a href="index.html" class="btn-primary error-btn">Return Home</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- Footer Branding -->
+            <div class="footer-branding">
+                <div class="logo" style="margin-bottom: var(--space-6);">
+                    <a href="index.html">
+                        <img src="assets/icons/logo.svg" alt="TerraVoyage Logo" class="logo-icon">
+                        <span>TerraVoyage</span>
+                    </a>
+                </div>
+                <p class="footer-tagline">Curating cinematic expeditions for the modern explorer.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Instagram">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                            <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+                        </svg>
+                    </a>
+                    <a href="#" aria-label="YouTube">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                                d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 2-2h15a2 2 0 0 1 2 2 24.12 24.12 0 0 1 0 10 2 2 0 0 1-2 2h-15a2 2 0 0 1-2-2z" />
+                            <path d="m10 15 5-3-5-3z" />
+                        </svg>
+                    </a>
+                    <a href="#" aria-label="X">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                                d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.748l7.73-8.835L2.25 2.25h6.897l4.264 5.638 5.833-5.638Zm-1.161 17.52h1.833L7.084 4.126H5.117Z" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Explore -->
+            <div class="footer-column">
+                <h4>Explore</h4>
+                <ul>
+                    <li><a href="pages/destinations.html">Destinations</a></li>
+                    <li><a href="pages/adventures.html">Adventures</a></li>
+                    <li><a href="pages/stories.html">Stories</a></li>
+                    <li><a href="pages/about.html">About</a></li>
+                </ul>
+            </div>
+
+            <!-- Company -->
+            <div class="footer-column">
+                <h4>Company</h4>
+                <ul>
+                    <li class="collapsible-wrapper">
+                        <div class="collapsible-trigger">
+                            Home <svg class="dropdown-icon" width="10" height="6" viewBox="0 0 10 6" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                        <ul class="collapsible-content">
+                            <li><a href="index.html">Home V1</a></li>
+                            <li><a href="home-v2.html">Home V2</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="pages/about.html">Our Story</a></li>
+                    <li><a href="pages/collaborate.html">Collaborate</a></li>
+                    <li><a href="pages/login.html">Login</a></li>
+                    <li><a href="404.html">404 Page</a></li>
+                </ul>
+            </div>
+
+            <!-- Newsletter -->
+            <div class="footer-newsletter">
+                <h4>Stay in the Know</h4>
+                <p>Join our newsletter for the latest travel stories and expeditions.</p>
+                <form class="newsletter-form" onsubmit="return false;">
+                    <input type="email" placeholder="Your email address" required>
+                    <button type="submit" class="btn-primary">Subscribe</button>
+                </form>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <div class="footer-bottom-container">
+                <div class="bottom-left">
+                    <span>&copy; 2024 TerraVoyage. All rights reserved.</span>
+                </div>
+                <div class="bottom-center">
+                    <a href="#">Privacy Policy</a>
+                    <span class="separator">|</span>
+                    <a href="#">Terms &amp; Conditions</a>
+                    <span class="separator">|</span>
+                    <a href="#">Cookie Policy</a>
+                </div>
+                <div class="bottom-right">
+                    <span>Designed for Cinematic Excellence.</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>

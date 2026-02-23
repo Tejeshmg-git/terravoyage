@@ -1,0 +1,126 @@
+/* 
+  TerraVoyage Design System 
+  Rules:
+  - 8px Spacing Scale
+  - 12px Border Radius
+  - 1200px Max Content Width
+  - Playfair Display (Headings) / Poppins (Body)
+*/
+
+:root {
+    /* Colors - Light Mode (Default) */
+    --color-bg: #F5F5F7;
+    --color-surface: #FFFFFF;
+    --color-surface-alt: #E8E8ED;
+    --color-text: #1A1A1A;
+    --color-text-muted: rgba(0, 0, 0, 0.6);
+    --color-border: rgba(0, 0, 0, 0.1);
+    --color-accent: #F97316;
+    --color-accent-hover: #EA580C;
+
+    /* Spacing Scale (8px) */
+    --space-1: 8px;
+    --space-2: 16px;
+    --space-3: 24px;
+    --space-4: 32px;
+    --space-5: 40px;
+    --space-6: 48px;
+    --space-8: 64px;
+    --space-10: 80px;
+    --space-12: 96px;
+    --space-15: 120px;
+
+    /* Layout */
+    --container-max-width: 1200px;
+    --grid-gap: 24px;
+    --border-radius: 12px;
+    --navbar-height: 80px;
+
+    /* Typography */
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Poppins', sans-serif;
+}
+
+[data-theme="dark"] {
+    --color-bg: #0A0A0A;
+    --color-surface: #121212;
+    --color-surface-alt: #1A1A1A;
+    --color-text: #FFFFFF;
+    --color-text-muted: rgba(255, 255, 255, 0.6);
+    --color-border: rgba(255, 255, 255, 0.1);
+}
+
+/* Reset & Base */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.rtl-mode {
+    direction: ltr;
+}
+
+body.rtl-mode .nav-container,
+body.rtl-mode .hero-btns,
+body.rtl-mode .footer-bottom-container,
+body.rtl-mode .grid-two-col {
+    flex-direction: row-reverse;
+}
+
+/* Bullet alignment fix */
+body.rtl-mode .feature-list {
+    text-align: left;
+}
+
+body.rtl-mode .feature-list li {
+    flex-direction: row;
+}
+
+body.rtl-mode .feature-list li::before {
+    margin-right: 8px;
+    margin-left: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s ease;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}

@@ -1,0 +1,383 @@
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Nomads of the High Plateau | TerraVoyage Story</title>
+    <meta name="description"
+        content="A deep dive into the lives of traditional caravan nomads navigating the central steppe across changing seasons.">
+
+    <script>
+        (function () {
+            const savedTheme = localStorage.getItem('theme') || 'dark';
+            document.documentElement.setAttribute('data-theme', savedTheme);
+            // Keep body hidden until main.js restores RTL class → no flash
+            document.documentElement.classList.add('page-loading');
+        })();
+    </script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="icon" type="image/svg+xml" href="../assets/icons/favicon.svg">
+    <style>
+        /* Story Detail Specific Styles */
+        .story-header {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 160px var(--space-4) 80px;
+        }
+
+        .story-header h1 {
+            font-size: clamp(36px, 6vw, 56px);
+            margin-bottom: var(--space-4);
+            line-height: 1.1;
+        }
+
+        .story-meta {
+            display: flex;
+            justify-content: center;
+            gap: var(--space-6);
+            font-size: 13px;
+            color: var(--color-text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+        }
+
+        .story-meta span {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .story-meta .dot {
+            width: 4px;
+            height: 4px;
+            background: var(--color-accent);
+            border-radius: 50%;
+        }
+
+        .story-content {
+            max-width: 750px;
+            margin: 0 auto;
+            padding: 0 var(--space-4);
+        }
+
+        .story-content p {
+            font-size: 18px;
+            line-height: 1.9;
+            margin-bottom: var(--space-8);
+            color: var(--color-text);
+        }
+
+        .story-content .dropcap::first-letter {
+            float: left;
+            font-family: var(--font-heading);
+            font-size: 72px;
+            line-height: 1;
+            padding-right: 12px;
+            color: var(--color-accent);
+        }
+
+        .story-quote {
+            font-family: var(--font-heading);
+            font-size: 28px;
+            font-style: italic;
+            text-align: center;
+            margin: 80px 0;
+            padding: 40px;
+            border-top: 1px solid var(--color-border);
+            border-bottom: 1px solid var(--color-border);
+            color: var(--color-text);
+        }
+
+        .image-break {
+            width: 100%;
+            margin: 80px 0;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--space-4);
+        }
+
+        .image-break img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            border-radius: var(--border-radius);
+        }
+
+        .story-footer {
+            max-width: 800px;
+            margin: 80px auto;
+            padding: 40px var(--space-4);
+            border-top: 4px solid var(--color-accent);
+            text-align: center;
+        }
+
+        .story-footer h4 {
+            font-family: var(--font-heading);
+            font-size: 24px;
+            margin-bottom: 12px;
+        }
+    </style>
+</head>
+
+<body class="story-detail-page">
+    <header class="header">
+        <div class="header-container">
+            <div class="header-left">
+                <div class="logo">
+                    <a href="../index.html">
+                        <img src="../assets/icons/logo.svg" alt="TerraVoyage Logo" class="logo-icon">
+                        <span>TerraVoyage</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="header-center">
+                <nav class="nav-links-wrapper">
+                    <ul class="nav-links">
+                                                                        <li class="has-dropdown">
+                            <a href="../index.html">Home <svg class="dropdown-icon" width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="../index.html">Home V1</a></li>
+                                <li><a href="../home-v2.html">Home V2</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="destinations.html">Destinations</a></li>
+                        <li><a href="adventures.html">Adventures</a></li>
+                        <li><a href="stories.html">Stories</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="collaborate.html">Collaborate</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div class="header-right">
+                <div class="header-actions">
+                    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+                        <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />
+                        </svg>
+                        <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" style="display: none;">
+                            <circle cx="12" cy="12" r="4" />
+                            <path d="M12 2v2" />
+                            <path d="M12 20v2" />
+                            <path d="m4.93 4.93 1.41 1.41" />
+                            <path d="m17.66 17.66 1.41 1.41" />
+                            <path d="M2 12h2" />
+                            <path d="M20 12h2" />
+                            <path d="m6.34 17.66-1.41 1.41" />
+                            <path d="m19.07 4.93-1.41 1.41" />
+                        </svg>
+                    </button>
+                    <button class="rtl-toggle" id="rtl-toggle">LTR</button>
+                    <a href="login.html" class="login-link">Login</a>
+                    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="nav-overlay" id="nav-overlay"></div>
+
+    <div class="mobile-nav" id="mobile-nav">
+        <div class="mobile-nav-links">
+                                    <div class="has-dropdown">
+                <a href="#" class="mobile-dropdown-toggle">Home <svg class="dropdown-icon" width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1L6 6L11 1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+                <ul class="mobile-dropdown-menu">
+                    <li><a href="../index.html">Home V1</a></li>
+                    <li><a href="../home-v2.html">Home V2</a></li>
+                </ul>
+            </div>
+            <a href="destinations.html">Destinations</a>
+            <a href="adventures.html">Adventures</a>
+            <a href="stories.html">Stories</a>
+            <a href="about.html">About</a>
+            <a href="collaborate.html">Collaborate</a>
+            <a href="login.html">Login</a>
+        </div>
+        <div class="mobile-actions" style="margin-top: auto;">
+            <button class="rtl-toggle" id="rtl-toggle-mobile" style="margin-bottom: var(--space-4);">LTR</button>
+            <a href="destinations.html" class="btn-primary" style="display: block; text-align: center;">Start
+                Exploring</a>
+        </div>
+    </div>
+
+    <main>
+        <!-- Story Header -->
+        <div class="story-header outline-reveal">
+            <span class="hero-label" style="margin-bottom: 20px;">Cultural Insight</span>
+            <h1>The Nomads of the High Plateau</h1>
+            <div class="story-meta">
+                <span>Marcus Thorne</span>
+                <div class="dot"></div>
+                <span>October 12, 2024</span>
+                <div class="dot"></div>
+                <span>12 Min Read</span>
+            </div>
+        </div>
+
+        <!-- Narrative Content -->
+        <article class="story-content">
+            <p class="dropcap">The air at 5,000 meters is not just thin; it is elective. It chooses who stays and who
+                must retreat. For the Chanpa nomads of the high Ladakh plateau, this crystalline, oxygen-starved
+                environment is not a challenge to be overcome, but a home to be honored. Their migration is a sacred
+                geometry, a pattern traced across the earth for a thousand years.</p>
+
+            <p>I joined the winter caravan as the first frost began to harden the silver streams. Forty families, three
+                hundred yaks, and the collective memory of a civilization were moving south. It is a journey of 120
+                miles, executed with the precision of a military operation and the reverence of a pilgrimage.</p>
+
+            <blockquote class="story-quote">"The mountain does not move for the man. The man must learn the language of
+                the wind to survive."</blockquote>
+
+            <p>During the day, the silence is so profound it becomes a sound itself—a low-frequency vibration of
+                shifting ice and distant winds. At night, the sky collapses onto the earth, thousands of stars so bright
+                they cast shadows against the woolen tents. We gathered around butter-lamp fires, listening to elders
+                recount stories of the Great White Bear and the spirits that inhabit the glaciers.</p>
+
+            <div class="image-break">
+                <img src="../assets/images/collaborate/himalayas.jpg" alt="Snowy peaks"
+                    style="object-position: center;">
+                <img src="../assets/images/story-img/mountain monastery.jpg" alt="Mountain monastery"
+                    style="object-position: center;">
+            </div>
+
+            <p>But the pattern is changing. The silver streams are flowing earlier each year, and the grass that
+                sustains the yak herds is thinning. The nomads are the first witnesses to a world out of balance. Their
+                stories are no longer just records of migration; they are dispatches from the front lines of a changing
+                planet.</p>
+
+            <p>Documenting this journey was not about capturing the aesthetic of the "other." It was about recognizing
+                the shared pulse of humanity that persists in the most extreme conditions. As we descended into the
+                valley, the modern world felt strangely loud and hollow compared to the heavy silence of the plateau.
+            </p>
+        </article>
+
+        <!-- Story Footer/CTA -->
+        <div class="story-footer">
+            <h4 style="font-family: var(--font-heading);">Stay Connected with the Narrative</h4>
+            <p style="color: var(--color-text-muted); font-size: 15px; margin-bottom: 30px;">Every story we document is
+                a contribution to a global archive of human resilience.</p>
+            <a href="stories.html" class="btn-ghost" style="padding: 14px 40px;">Return to All Stories</a>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+
+            <!-- Brand -->
+            <div class="footer-brand">
+                <a href="../index.html" class="footer-logo">
+                    <img src="../assets/icons/logo.svg" alt="TerraVoyage Logo">
+                    TerraVoyage
+                </a>
+                <p>TerraVoyage is a documentary-driven travel platform dedicated to exploring remote cultures, untold
+                    histories, and human stories shaped by landscape.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Instagram">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                        </svg>
+                    </a>
+                    <a href="#" aria-label="YouTube">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                                d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.4a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z" />
+                            <polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" />
+                        </svg>
+                    </a>
+                    <a href="#" aria-label="X / Twitter">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                            fill="currentColor">
+                            <path
+                                d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.748l7.73-8.835L2.25 2.25h6.897l4.264 5.638 5.833-5.638Zm-1.161 17.52h1.833L7.084 4.126H5.117Z" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Explore -->
+            <div class="footer-column">
+                <h4>Explore</h4>
+                <ul>
+                    <li><a href="destinations.html">Destinations</a></li>
+                    <li><a href="adventures.html">Adventures</a></li>
+                    <li><a href="stories.html">Stories</a></li>
+                    <li><a href="about.html">About</a></li>
+                </ul>
+            </div>
+
+            <!-- Company -->
+                                    <div class="footer-column">
+                <h4>Company</h4>
+                <ul>
+                    <li class="collapsible-wrapper">
+                        <div class="collapsible-trigger">
+                            Home <svg class="dropdown-icon" width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </div>
+                        <ul class="collapsible-content">
+                            <li><a href="../index.html">Home V1</a></li>
+                            <li><a href="../home-v2.html">Home V2</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="about.html">Our Story</a></li>
+                    <li><a href="collaborate.html">Collaborate</a></li>
+                    <li><a href="login.html">Login</a></li>
+                    <li><a href="../404.html">404 Page</a></li>
+                </ul>
+            </div>
+
+            <!-- Newsletter -->
+            <div class="footer-newsletter">
+                <h4>Stay in the Know</h4>
+                <p>Join our newsletter for the latest travel stories and expeditions.</p>
+                <form class="newsletter-form" onsubmit="return false;">
+                    <input type="email" placeholder="Your email address" required>
+                    <button type="submit" class="btn-primary">Subscribe</button>
+                </form>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <div class="footer-bottom-container">
+                <div class="bottom-left">
+                    <span>&copy; 2024 TerraVoyage. All rights reserved.</span>
+                </div>
+                <div class="bottom-center">
+                    <a href="#">Privacy Policy</a>
+                    <span class="separator">|</span>
+                    <a href="#">Terms &amp; Conditions</a>
+                    <span class="separator">|</span>
+                    <a href="#">Cookie Policy</a>
+                </div>
+                <div class="bottom-right">
+                    <span>Designed for Cinematic Excellence.</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
+</body>
+
+</html>

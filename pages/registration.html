@@ -1,0 +1,259 @@
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register | TerraVoyage</title>
+
+    <script>
+        (function () {
+            const savedTheme = localStorage.getItem('theme') || 'dark';
+            document.documentElement.setAttribute('data-theme', savedTheme);
+            // Keep body hidden until main.js restores RTL class → no flash
+            document.documentElement.classList.add('page-loading');
+        })();
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Poppins:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="icon" type="image/svg+xml" href="../assets/icons/favicon.svg">
+
+    <style>
+        .registration-page {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--color-bg);
+            padding: var(--space-4);
+            position: relative;
+            overflow: hidden;
+            padding-top: 80px;
+            padding-bottom: 80px;
+        }
+
+        .login-bg-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, rgba(249, 115, 22, 0.05) 0%, transparent 70%);
+            z-index: 1;
+        }
+
+        .registration-card {
+            background: var(--color-surface);
+            width: 100%;
+            max-width: 550px;
+            padding: var(--space-10);
+            border-radius: 24px;
+            border: 1px solid var(--color-border);
+            position: relative;
+            z-index: 2;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        }
+
+        .registration-header {
+            text-align: center;
+            margin-bottom: var(--space-8);
+        }
+
+        .registration-logo {
+            margin-bottom: var(--space-4);
+            display: inline-block;
+        }
+
+        .registration-logo img {
+            width: 56px;
+            height: 56px;
+        }
+
+        .registration-card h1 {
+            font-size: clamp(28px, 5vw, 36px);
+            margin-bottom: var(--space-2);
+            font-family: var(--font-heading);
+        }
+
+        .registration-card p {
+            color: var(--color-text-muted);
+            font-size: 15px;
+        }
+
+        .registration-form {
+            display: grid;
+            gap: var(--space-5);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-4);
+        }
+
+        @media (max-width: 500px) {
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .registration-footer {
+            margin-top: var(--space-8);
+            text-align: center;
+            font-size: 14px;
+            color: var(--color-text-muted);
+        }
+
+        .registration-footer a {
+            color: var(--color-accent);
+            font-weight: 600;
+        }
+
+        .back-home {
+            position: absolute;
+            top: var(--space-6);
+            left: var(--space-6);
+            color: var(--color-text-muted);
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            z-index: 10;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .back-home:hover {
+            color: var(--color-accent);
+        }
+
+        .form-field label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--color-text);
+        }
+
+        .form-field input,
+        .form-field select {
+            width: 100%;
+            padding: 14px 16px;
+            border-radius: 12px;
+            border: 1px solid var(--color-border);
+            background: rgba(255, 255, 255, 0.03);
+            color: var(--color-text);
+            font-family: inherit;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+
+        .form-field input:focus,
+        .form-field select:focus {
+            outline: none;
+            border-color: var(--color-accent);
+            box-shadow: 0 0 0 4px rgba(249, 115, 22, 0.1);
+        }
+
+        .checkbox-group {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-top: var(--space-2);
+        }
+
+        .checkbox-group input {
+            width: 18px;
+            height: 18px;
+            margin-top: 2px;
+            accent-color: var(--color-accent);
+        }
+
+        .checkbox-group label {
+            font-size: 13px;
+            color: var(--color-text-muted);
+            line-height: 1.5;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="registration-page">
+        <div class="login-bg-overlay"></div>
+
+        <a href="../index.html" class="back-home">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="m15 18-6-6 6-6" />
+            </svg>
+            Back to Home
+        </a>
+
+        <div class="registration-card">
+            <div class="registration-header">
+                <div class="registration-logo">
+                    <img src="../assets/icons/logo.svg" alt="TerraVoyage Logo">
+                </div>
+                <h1>Join the Expedition</h1>
+                <p>Create your explorer profile to begin your next great narrative.</p>
+            </div>
+
+            <form class="registration-form">
+                <div class="form-row">
+                    <div class="form-field">
+                        <label for="first-name">First Name</label>
+                        <input type="text" id="first-name" placeholder="John" required>
+                    </div>
+                    <div class="form-field">
+                        <label for="last-name">Last Name</label>
+                        <input type="text" id="last-name" placeholder="Doe" required>
+                    </div>
+                </div>
+
+                <div class="form-field">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" placeholder="explorer@terravoyage.com" required>
+                </div>
+
+                <div class="form-field">
+                    <label for="experience">Experience Level</label>
+                    <select id="experience" required>
+                        <option value="" disabled selected>Select your experience</option>
+                        <option value="curious">Curious Explorer (Beginner)</option>
+                        <option value="seasoned">Seasoned Traveler (Intermediate)</option>
+                        <option value="elite">Elite Adventurer (Advanced)</option>
+                        <option value="documentary">Documentary Specialist</option>
+                    </select>
+                </div>
+
+                <div class="form-field">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="••••••••" required>
+                </div>
+
+                <div class="checkbox-group">
+                    <input type="checkbox" id="terms" required>
+                    <label for="terms">I agree to the Terms of Service and Privacy Policy, and I understand that
+                        TerraVoyage expeditions require physical and mental resilience.</label>
+                </div>
+
+                <button type="submit" class="btn-primary"
+                    style="width: 100%; padding: 18px; margin-top: var(--space-4); font-weight: 600;">Create
+                    Account</button>
+            </form>
+
+            <div class="registration-footer">
+                Already have an account? <a href="login.html">Sign In</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="../assets/js/main.js"></script>
+</body>
+
+</html>

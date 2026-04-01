@@ -57,7 +57,7 @@ body {
 }
 
 /* ======================================
-   HOME V1 – RESPONSIVE HERO SYSTEM
+   HOME V1 â€“ RESPONSIVE HERO SYSTEM
    ====================================== */
 
 .home-hero {
@@ -107,7 +107,7 @@ body {
     border-color: rgba(255, 255, 255, 0.7) !important;
 }
 
-/* 📱 Mobile Optimization (≤ 576px) */
+/* ðŸ“± Mobile Optimization (â‰¤ 576px) */
 @media (max-width: 576px) {
     .home-hero {
         min-height: 85vh;
@@ -124,7 +124,7 @@ body {
     }
 }
 
-/* 📲 Tablet (577px – 991px) */
+/* ðŸ“² Tablet (577px â€“ 991px) */
 @media (min-width: 577px) and (max-width: 991px) {
     .home-hero {
         min-height: 88vh;
@@ -139,14 +139,14 @@ body {
     }
 }
 
-/* 💻 Laptop (992px – 1200px) */
+/* ðŸ’» Laptop (992px â€“ 1200px) */
 @media (min-width: 992px) and (max-width: 1200px) {
     .home-hero h1 {
         font-size: 3.2rem !important;
     }
 }
 
-/* 🖥 Large Desktop (1200px+) */
+/* ðŸ–¥ Large Desktop (1200px+) */
 @media (min-width: 1201px) {
     .home-hero h1 {
         font-size: 3.8rem !important;
@@ -154,7 +154,7 @@ body {
 }
 
 /* ======================================
-   DESTINATIONS PAGE – HERO OVERLAY
+   DESTINATIONS PAGE â€“ HERO OVERLAY
    ====================================== */
 
 .destinations-hero .hero-bg {
@@ -193,7 +193,7 @@ body {
 }
 
 /* =====================================
-   ADVENTURES HERO — CONTRAST FIX
+   ADVENTURES HERO â€” CONTRAST FIX
    ===================================== */
 
 .adventures-hero .hero-bg {
@@ -233,7 +233,7 @@ body {
 }
 
 /* =====================================
-   STORIES HERO — CONTRAST FIX
+   STORIES HERO â€” CONTRAST FIX
    ===================================== */
 
 .stories-hero .hero-bg {
@@ -272,7 +272,7 @@ body {
 }
 
 /* =====================================
-   MEDIA KIT HERO — IMAGE & CONTRAST FIX
+   MEDIA KIT HERO â€” IMAGE & CONTRAST FIX
    ===================================== */
 
 .media-hero {
@@ -345,7 +345,7 @@ body {
 }
 
 /* =====================
-   HERO — LIGHT THEME (Global)
+   HERO â€” LIGHT THEME (Global)
    ===================== */
 
 .hero-overlay {
@@ -357,7 +357,7 @@ body {
 }
 
 /* =====================
-   CTA SECTIONS — Global Background (All Pages)
+   CTA SECTIONS â€” Global Background (All Pages)
    ===================== */
 .cta-section {
     background-color: var(--color-surface);
@@ -423,7 +423,7 @@ html {
 }
 
 /* Anti-flash: body is hidden while JS restores RTL/theme state.
-   main.js removes html.page-loading after applying all classes → smooth fade-in */
+   main.js removes html.page-loading after applying all classes â†’ smooth fade-in */
 html.page-loading body {
     opacity: 0;
     pointer-events: none;
@@ -442,23 +442,23 @@ body {
 }
 
 /* =====================
-   RTL MODE — Layout flip only via body.rtl-mode class.
-   Hero sections explicitly excluded — always stay centered.
+   RTL MODE â€” Layout flip only via body.rtl-mode class.
+   Hero sections explicitly excluded â€” always stay centered.
    ===================== */
 
 /* =====================
-   RTL HEADER — Clean Mirror System
+   RTL HEADER â€” Clean Mirror System
    3 containers: [Brand] [Navigation] [Actions]
-   LTR: Brand | Nav | Actions  (left → right)
-   RTL: Actions | Nav(reversed) | Brand  (left → right)
+   LTR: Brand | Nav | Actions  (left â†’ right)
+   RTL: Actions | Nav(reversed) | Brand  (left â†’ right)
    ===================== */
 
-/* 1️⃣ Swap the 3 containers: Brand goes right, Actions go left */
+/* 1ï¸âƒ£ Swap the 3 containers: Brand goes right, Actions go left */
 body.rtl-mode .header-container {
     flex-direction: row-reverse;
 }
 
-/* 2️⃣ Brand pushes to the right edge in RTL */
+/* 2ï¸âƒ£ Brand pushes to the right edge in RTL */
 body.rtl-mode .header-left {
     justify-content: flex-end;
 }
@@ -470,23 +470,23 @@ body.rtl-mode .header-right {
 
 body.rtl-mode .logo a {
     flex-direction: row;
-    /* icon then text — never reversed internally */
+    /* icon then text â€” never reversed internally */
 }
 
-/* 3️⃣ Reverse navigation link order (Collaborate→Home instead of Home→Collaborate) */
+/* 3ï¸âƒ£ Reverse navigation link order (Collaborateâ†’Home instead of Homeâ†’Collaborate) */
 body.rtl-mode .nav-links {
     flex-direction: row-reverse;
 }
 
-/* 4️⃣ Actions container — keep internal order (Theme, RTL, Login) intact */
+/* 4ï¸âƒ£ Actions container â€” keep internal order (Theme, RTL, Login) intact */
 body.rtl-mode .header-actions {
     flex-direction: row;
-    /* don't double-reverse — parent already flipped */
+    /* don't double-reverse â€” parent already flipped */
     gap: 24px;
     /* Match LTR spacing exactly */
 }
 
-/* 5️⃣ Hamburger spacing — flip margin side */
+/* 5ï¸âƒ£ Hamburger spacing â€” flip margin side */
 body.rtl-mode .hamburger {
     margin-left: 0;
     margin-right: 8px;
@@ -494,7 +494,7 @@ body.rtl-mode .hamburger {
     margin-inline-end: 8px;
 }
 
-/* 6️⃣ Dropdown menu alignment — flip to right-aligned in RTL */
+/* 6ï¸âƒ£ Dropdown menu alignment â€” flip to right-aligned in RTL */
 body.rtl-mode .has-dropdown .dropdown-menu {
     left: auto;
     right: 50%;
@@ -505,13 +505,13 @@ body.rtl-mode .has-dropdown:hover .dropdown-menu {
     transform: translateX(50%) translateY(5px);
 }
 
-/* 7️⃣ Nav container general flip */
+/* 7ï¸âƒ£ Nav container general flip */
 body.rtl-mode .nav-container {
     flex-direction: row-reverse;
 }
 
 /* =====================
-   RTL FOOTER — Clean Mirror System
+   RTL FOOTER â€” Clean Mirror System
    Uses flex-direction: row-reverse (NOT direction: rtl)
    to avoid text punctuation issues
    ===================== */
@@ -524,7 +524,7 @@ body.rtl-mode .footer-bottom-container {
     flex-direction: row-reverse;
 }
 
-/* RTL Footer text alignment — right-aligned */
+/* RTL Footer text alignment â€” right-aligned */
 body.rtl-mode .footer-brand,
 body.rtl-mode .footer-column,
 body.rtl-mode .footer-newsletter,
@@ -532,7 +532,7 @@ body.rtl-mode .footer-column h4 {
     text-align: right !important;
 }
 
-/* RTL Footer column links — align to right */
+/* RTL Footer column links â€” align to right */
 body.rtl-mode .footer-column ul {
     display: flex;
     flex-direction: column;
@@ -543,12 +543,12 @@ body.rtl-mode .footer-column .collapsible-trigger {
     justify-content: flex-end;
 }
 
-/* Social links — push to right in RTL */
+/* Social links â€” push to right in RTL */
 body.rtl-mode .social-links {
     justify-content: flex-end;
 }
 
-/* Newsletter button — push to right in RTL */
+/* Newsletter button â€” push to right in RTL */
 body.rtl-mode .newsletter-form button {
     align-self: flex-end;
 }
@@ -576,7 +576,7 @@ body.rtl-mode .feature-list li::before {
     right: 0;
 }
 
-/* Hero sections — NEVER flip. Always center-aligned in both modes. */
+/* Hero sections â€” NEVER flip. Always center-aligned in both modes. */
 body.rtl-mode .hero,
 body.rtl-mode .hero-content,
 body.rtl-mode .about-hero,
@@ -617,7 +617,7 @@ img {
 
 /* --- layout.css --- */
 /* =====================
-   HEADER & NAVIGATION — PRODUCTION READY
+   HEADER & NAVIGATION â€” PRODUCTION READY
    ===================== */
 .header {
     position: fixed;
@@ -783,7 +783,7 @@ img {
     /* Spacting from other actions */
 }
 
-/* RTL hamburger margin — handled in consolidated RTL header section above */
+/* RTL hamburger margin â€” handled in consolidated RTL header section above */
 
 .hamburger span {
     display: block;
@@ -927,6 +927,16 @@ body.rtl-mode .mobile-nav-links {
     z-index: 100;
 }
 
+/* Invisible bridge to prevent dropdown from closing when mouse crosses gap */
+.dropdown-menu::before {
+    content: "";
+    position: absolute;
+    top: -20px;
+    left: 0;
+    width: 100%;
+    height: 20px;
+}
+
 .has-dropdown:hover .dropdown-menu {
     opacity: 1;
     visibility: visible;
@@ -1026,7 +1036,7 @@ body.rtl-mode .has-dropdown:hover .dropdown-icon {
     margin-bottom: 0;
 }
 
-/* RTL Footer Column Alignment — Handled in consolidated section above */
+/* RTL Footer Column Alignment â€” Handled in consolidated section above */
 
 /* Logical Padding for footer links */
 .footer-column ul li a {
@@ -1082,9 +1092,9 @@ body.rtl-mode .mobile-dropdown-menu {
     border-inline-end: 1px solid var(--color-border);
 }
 
-/* RESPONSIVE HEADERS — Stable Rebuild */
+/* RESPONSIVE HEADERS â€” Stable Rebuild */
 
-/* Tablet (768px - 1100px) — Compact Desktop */
+/* Tablet (768px - 1100px) â€” Compact Desktop */
 @media (max-width: 1100px) {
     .header-container {
         height: 80px;
@@ -1120,7 +1130,7 @@ body.rtl-mode .mobile-dropdown-menu {
         min-width: 32px;
     }
 
-    /* Tablet Grid System — Strict Layout Rules */
+    /* Tablet Grid System â€” Strict Layout Rules */
     .grid-three-col,
     .storyteller-grid,
     .philosophy-grid,
@@ -1166,10 +1176,10 @@ body.rtl-mode .mobile-dropdown-menu {
     }
 
     /* Tablet Footer: keep flex layout only above 992px (handled by base styles).
-       For 768–992px see the dedicated @media block below. */
+       For 768â€“992px see the dedicated @media block below. */
 }
 
-/* ---- Tablet Footer (≤992px) — 2-Column Grid ---- */
+/* ---- Tablet Footer (â‰¤992px) â€” 2-Column Grid ---- */
 /* Balanced layout: Brand + Newsletter (heavy) on row 1,
    Explore + Company (link lists) on row 2 */
 @media (max-width: 992px) {
@@ -1223,7 +1233,7 @@ body.rtl-mode .mobile-dropdown-menu {
     }
 }
 
-/* ---- Small Mobile Footer (≤576px) — Single Column ---- */
+/* ---- Small Mobile Footer (â‰¤576px) â€” Single Column ---- */
 @media (max-width: 576px) {
     footer .footer-container {
         grid-template-columns: 1fr !important;
@@ -1262,7 +1272,7 @@ body.rtl-mode .mobile-dropdown-menu {
         display: none !important;
     }
 
-    /* 🔧 FIX HERO MOBILE BUTTON TOUCHING NEXT SECTION */
+    /* ðŸ”§ FIX HERO MOBILE BUTTON TOUCHING NEXT SECTION */
     .hero,
     .hero-banner,
     .v2-hero,
@@ -1291,7 +1301,7 @@ body.rtl-mode .mobile-dropdown-menu {
         margin-bottom: 40px !important;
     }
 
-    /* 🔧 REDUCE SECTION SPACING – ADVENTURE PAGE (Mobile Only) */
+    /* ðŸ”§ REDUCE SECTION SPACING â€“ ADVENTURE PAGE (Mobile Only) */
     .adventures-page section,
     .adventure-page section {
         padding-top: 24px !important;
@@ -1314,7 +1324,7 @@ body.rtl-mode .mobile-dropdown-menu {
     }
 }
 
-/* 🔥 SMALL TABLET → HAMBURGER MODE */
+/* ðŸ”¥ SMALL TABLET â†’ HAMBURGER MODE */
 @media (min-width: 768px) and (max-width: 1023px) {
 
     .header-center,
@@ -1354,7 +1364,7 @@ body.rtl-mode .mobile-dropdown-menu {
     display: block;
 }
 
-/* 🔥 LARGE TABLET → SLIM DESKTOP MODE */
+/* ðŸ”¥ LARGE TABLET â†’ SLIM DESKTOP MODE */
 @media (min-width: 1024px) and (max-width: 1200px) {
     .header-container {
         padding: 0 24px;
@@ -1414,10 +1424,10 @@ body.rtl-mode .mobile-dropdown-menu {
         font-size: 19px;
     }
 
-    /* ── Mobile RTL Header Spacing Refinement ── */
+    /* â”€â”€ Mobile RTL Header Spacing Refinement â”€â”€ */
     /* In RTL: header-container is row-reversed, so:
-       - header-left (Brand) is visually on RIGHT → push content to flex-end (outer edge)
-       - header-right (Actions) is visually on LEFT → push content to flex-start (outer edge) */
+       - header-left (Brand) is visually on RIGHT â†’ push content to flex-end (outer edge)
+       - header-right (Actions) is visually on LEFT â†’ push content to flex-start (outer edge) */
 
     body.rtl-mode .header-container {
         padding: 0 16px;
@@ -1437,19 +1447,19 @@ body.rtl-mode .mobile-dropdown-menu {
     /* Consistent spacing between action items on mobile */
     body.rtl-mode .header-actions {
         gap: 12px;
-        /* Uniform spacing: Theme ↔ RTL ↔ Hamburger */
+        /* Uniform spacing: Theme â†” RTL â†” Hamburger */
     }
 
     /* Hamburger aligns cleanly to outer left edge in RTL */
     body.rtl-mode .hamburger {
         margin-left: 0;
         margin-right: 0;
-        /* No extra margin — gap handles spacing */
+        /* No extra margin â€” gap handles spacing */
         order: -1;
         /* Move hamburger to the leftmost position in actions */
     }
 
-    /* Reset hamburger order in LTR — it should stay rightmost */
+    /* Reset hamburger order in LTR â€” it should stay rightmost */
     .hamburger {
         order: 0;
     }
@@ -1462,7 +1472,7 @@ body.rtl-mode .mobile-dropdown-menu {
         font-size: clamp(26px, 7vw, 32px) !important;
     }
 
-    /* Mobile Footer: Structured Stacking — Brand → Newsletter → Explore → Company */
+    /* Mobile Footer: Structured Stacking â€” Brand â†’ Newsletter â†’ Explore â†’ Company */
     .footer-container {
         display: grid !important;
         grid-template-columns: 1fr !important;
@@ -1490,9 +1500,9 @@ body.rtl-mode .mobile-dropdown-menu {
         order: 4 !important;
     }
 
-    /* RTL mobile — stays stacked, just right-aligned */
+    /* RTL mobile â€” stays stacked, just right-aligned */
     body.rtl-mode .footer-container {
-        /* Grid handles stacking — just override text alignment */
+        /* Grid handles stacking â€” just override text alignment */
         align-items: flex-start !important;
         text-align: right !important;
     }
@@ -1531,7 +1541,7 @@ body.rtl-mode .mobile-dropdown-menu {
         text-align: center !important;
     }
 
-    /* Mobile Grid Stacking (481px–767px) — Prevent overlap on small tablets/phones */
+    /* Mobile Grid Stacking (481pxâ€“767px) â€” Prevent overlap on small tablets/phones */
     .grid-two-col,
     .grid-three-col,
     .grid-four-col,
@@ -1574,7 +1584,7 @@ body.rtl-mode .mobile-dropdown-menu {
     }
 }
 
-/* 📱 Mobile Grid Stacking Breakpoint (0px–480px) */
+/* ðŸ“± Mobile Grid Stacking Breakpoint (0pxâ€“480px) */
 @media (max-width: 480px) {
 
     .section-container,
@@ -1586,7 +1596,7 @@ body.rtl-mode .mobile-dropdown-menu {
     .collaborate-container {
         padding-top: 60px !important;
         padding-bottom: 60px !important;
-        /* Tier 3: Large Mobile (428px–480px) default padding */
+        /* Tier 3: Large Mobile (428pxâ€“480px) default padding */
         padding-left: 24px !important;
         padding-right: 24px !important;
     }
@@ -1637,7 +1647,7 @@ body.rtl-mode .mobile-dropdown-menu {
         font-size: clamp(24px, 7vw, 30px) !important;
     }
 
-    /* Tier 2: Medium Mobile (390px–414px) */
+    /* Tier 2: Medium Mobile (390pxâ€“414px) */
     @media (max-width: 414px) {
 
         .section-container,
@@ -1652,7 +1662,7 @@ body.rtl-mode .mobile-dropdown-menu {
         }
     }
 
-    /* Tier 1: Small Mobile (320px–375px) */
+    /* Tier 1: Small Mobile (320pxâ€“375px) */
     @media (max-width: 375px) {
 
         .section-container,
@@ -1757,7 +1767,7 @@ body.rtl-mode .mobile-dropdown-menu {
     align-items: flex-start;
 }
 
-/* Footer column sizing — replicate the 1.4fr 1fr 1fr 1.2fr ratio */
+/* Footer column sizing â€” replicate the 1.4fr 1fr 1fr 1.2fr ratio */
 .footer-brand {
     flex: 1.4;
     min-width: 220px;
@@ -1983,7 +1993,7 @@ body.rtl-mode .footer-logo {
     }
 }
 
-/* ---- Mobile (Below 768px) — Clean Stacked Layout ---- */
+/* ---- Mobile (Below 768px) â€” Clean Stacked Layout ---- */
 @media (max-width: 767px) {
 
     /* Prevent horizontal scroll */
@@ -2042,7 +2052,7 @@ body.rtl-mode .footer-logo {
         gap: var(--space-2);
     }
 
-    /* Footer: single column (inherits grid from ≤992px, refines to 1 col) */
+    /* Footer: single column (inherits grid from â‰¤992px, refines to 1 col) */
     .footer-container {
         grid-template-columns: 1fr !important;
         gap: 32px !important;
@@ -2096,7 +2106,7 @@ body.rtl-mode .footer-logo {
     }
 }
 
-/* ---- Mobile (≤480px) ---- */
+/* ---- Mobile (â‰¤480px) ---- */
 @media (max-width: 480px) {
 
     /* Prevent any overflow */
@@ -2481,7 +2491,7 @@ body:not(.light-mode).collaborate-page .bg-white {
     border: 1px solid var(--color-border);
 }
 
-/* Metrics — Corrected for Dark Mode */
+/* Metrics â€” Corrected for Dark Mode */
 .metrics-band {
     background: var(--color-surface);
     padding: 60px 0;
@@ -2500,7 +2510,7 @@ body:not(.light-mode).collaborate-page .bg-white {
 
 /* Homepage Specific Components */
 
-/* Media Kit Hero — unique visual identity */
+/* Media Kit Hero â€” unique visual identity */
 .media-hero {
     background: radial-gradient(circle at center, #2d1200 0%, #1a0a00 60%, #0f0f0f 100%) !important;
     border-bottom: 1px solid rgba(249, 115, 22, 0.15);
@@ -2576,7 +2586,7 @@ body:not(.light-mode).collaborate-page .bg-white {
 }
 
 .feature-list li::before {
-    content: '→';
+    content: 'â†’';
     position: absolute;
     left: 0;
     color: var(--color-accent);
@@ -2615,12 +2625,12 @@ body:not(.light-mode).collaborate-page .bg-white {
 }
 
 /* =====================================================
-   📱 MOBILE-ONLY FIXES — Strictly ≤480px
+   ðŸ“± MOBILE-ONLY FIXES â€” Strictly â‰¤480px
    DO NOT modify tablet (768px+) or desktop layouts.
    ===================================================== */
 @media (max-width: 480px) {
 
-    /* ── GLOBAL: Prevent horizontal scroll & overflow ── */
+    /* â”€â”€ GLOBAL: Prevent horizontal scroll & overflow â”€â”€ */
     html,
     body {
         overflow-x: hidden !important;
@@ -2632,7 +2642,7 @@ body:not(.light-mode).collaborate-page .bg-white {
         box-sizing: border-box !important;
     }
 
-    /* ── 1️⃣ DESTINATION PAGE — Global Footprint / Metrics Section ── */
+    /* â”€â”€ 1ï¸âƒ£ DESTINATION PAGE â€” Global Footprint / Metrics Section â”€â”€ */
     .metrics-band {
         padding: 40px 16px !important;
     }
@@ -2675,7 +2685,7 @@ body:not(.light-mode).collaborate-page .bg-white {
         font-size: 36px !important;
     }
 
-    /* ── 2️⃣ ADVENTURES PAGE — Category Card Images ── */
+    /* â”€â”€ 2ï¸âƒ£ ADVENTURES PAGE â€” Category Card Images â”€â”€ */
     .adventure-cat-card {
         height: 280px !important;
     }
@@ -2698,7 +2708,7 @@ body:not(.light-mode).collaborate-page .bg-white {
         font-size: 13px !important;
     }
 
-    /* ── 3️⃣ ADVENTURES PAGE — Expedition Gallery Description ── */
+    /* â”€â”€ 3ï¸âƒ£ ADVENTURES PAGE â€” Expedition Gallery Description â”€â”€ */
     .gallery-grid {
         grid-template-columns: 1fr !important;
         gap: 16px !important;
@@ -2722,7 +2732,7 @@ body:not(.light-mode).collaborate-page .bg-white {
         font-size: 12px !important;
     }
 
-    /* ── 4️⃣ ADVENTURES PAGE — Preparation & Readiness Section ── */
+    /* â”€â”€ 4ï¸âƒ£ ADVENTURES PAGE â€” Preparation & Readiness Section â”€â”€ */
     .adventures-page section>.dest-container>div[style*="grid-template-columns"] {
         display: flex !important;
         flex-direction: column !important;
@@ -2734,7 +2744,7 @@ body:not(.light-mode).collaborate-page .bg-white {
         padding-right: 16px !important;
     }
 
-    /* ── 5️⃣ STORIES PAGE — Story Category Section ── */
+    /* â”€â”€ 5ï¸âƒ£ STORIES PAGE â€” Story Category Section â”€â”€ */
     .category-tabs {
         gap: 16px !important;
         padding: 0 16px !important;
@@ -2759,7 +2769,7 @@ body:not(.light-mode).collaborate-page .bg-white {
         padding-right: 16px !important;
     }
 
-    /* ── 6️⃣ STORIES PAGE — Archive by Region Section ── */
+    /* â”€â”€ 6ï¸âƒ£ STORIES PAGE â€” Archive by Region Section â”€â”€ */
     .region-card {
         width: 100% !important;
         height: 150px !important;
@@ -2779,7 +2789,7 @@ body:not(.light-mode).collaborate-page .bg-white {
         font-size: 20px !important;
     }
 
-    /* ── 7️⃣ ABOUT PAGE — Our Origin Section ── */
+    /* â”€â”€ 7ï¸âƒ£ ABOUT PAGE â€” Our Origin Section â”€â”€ */
     .about-container {
         padding-left: 16px !important;
         padding-right: 16px !important;
@@ -2795,7 +2805,7 @@ body:not(.light-mode).collaborate-page .bg-white {
         height: 300px !important;
     }
 
-    /* ── 8️⃣ ABOUT PAGE — Meet the Storytellers Section ── */
+    /* â”€â”€ 8ï¸âƒ£ ABOUT PAGE â€” Meet the Storytellers Section â”€â”€ */
     .team-grid {
         display: flex !important;
         flex-direction: column !important;
@@ -2812,7 +2822,7 @@ body:not(.light-mode).collaborate-page .bg-white {
         height: 120px !important;
     }
 
-    /* ── 9️⃣ COLLABORATE PAGE — Hero Section top spacing ── */
+    /* â”€â”€ 9ï¸âƒ£ COLLABORATE PAGE â€” Hero Section top spacing â”€â”€ */
     .collab-hero {
         padding-top: 80px !important;
         min-height: auto !important;
@@ -2830,7 +2840,7 @@ body:not(.light-mode).collaborate-page .bg-white {
         font-size: 16px !important;
     }
 
-    /* ── 🔟 COLLABORATE PAGE — Featured Partnership Section ── */
+    /* â”€â”€ ðŸ”Ÿ COLLABORATE PAGE â€” Featured Partnership Section â”€â”€ */
     .collaborate-container {
         padding-left: 16px !important;
         padding-right: 16px !important;
@@ -2856,7 +2866,7 @@ body:not(.light-mode).collaborate-page .bg-white {
         min-width: 0 !important;
     }
 
-    /* ── 1️⃣1️⃣ COLLABORATE PAGE — Contact Form ── */
+    /* â”€â”€ 1ï¸âƒ£1ï¸âƒ£ COLLABORATE PAGE â€” Contact Form â”€â”€ */
     .contact-card {
         padding: var(--space-6) var(--space-4) !important;
     }
@@ -2889,7 +2899,7 @@ body:not(.light-mode).collaborate-page .bg-white {
         margin-bottom: 8px !important;
     }
 
-    /* ── 📍 404 PAGE — Remove header & footer on mobile ── */
+    /* â”€â”€ ðŸ“ 404 PAGE â€” Remove header & footer on mobile â”€â”€ */
     .error-page-mobile .header,
     .error-page-mobile .mobile-nav,
     .error-page-mobile .nav-overlay,
@@ -2918,7 +2928,7 @@ body:not(.light-mode).collaborate-page .bg-white {
         font-size: 15px !important;
     }
 
-    /* ── 📍 LOGIN PAGE — Full visibility on mobile ── */
+    /* â”€â”€ ðŸ“ LOGIN PAGE â€” Full visibility on mobile â”€â”€ */
     .login-page {
         padding: 24px 16px !important;
         min-height: 100vh !important;
@@ -2946,7 +2956,7 @@ body:not(.light-mode).collaborate-page .bg-white {
         font-size: 13px !important;
     }
 
-    /* ── GENERAL: Sections with inline padding ── */
+    /* â”€â”€ GENERAL: Sections with inline padding â”€â”€ */
     section[style*="padding"]>.dest-container,
     section[style*="padding"]>.about-container,
     section[style*="padding"]>.collaborate-container,
@@ -3065,17 +3075,17 @@ body:not(.light-mode).collaborate-page .bg-white {
 }
 
 /* =====================================
-   MEDIA KIT + CASE STUDY – CLEAN SPACING
+   MEDIA KIT + CASE STUDY â€“ CLEAN SPACING
    ===================================== */
 
-/* 1️⃣ Normalize Section Padding */
+/* 1ï¸âƒ£ Normalize Section Padding */
 .media-kit-page section,
 .case-study-page section {
     padding-top: 60px;
     padding-bottom: 60px;
 }
 
-/* 2️⃣ Remove Extra Top/Bottom Margins from first/last children */
+/* 2ï¸âƒ£ Remove Extra Top/Bottom Margins from first/last children */
 .media-kit-page section > *:first-child,
 .case-study-page section > *:first-child {
     margin-top: 0;
@@ -3086,13 +3096,13 @@ body:not(.light-mode).collaborate-page .bg-white {
     margin-bottom: 0;
 }
 
-/* 3️⃣ Remove Accidental Margin Between Sections */
+/* 3ï¸âƒ£ Remove Accidental Margin Between Sections */
 .media-kit-page section + section,
 .case-study-page section + section {
     margin-top: 0;
 }
 
-/* 4️⃣ Reduce Mobile Spacing (Controlled) */
+/* 4ï¸âƒ£ Reduce Mobile Spacing (Controlled) */
 @media (max-width: 768px) {
     .media-kit-page section,
     .case-study-page section {
@@ -3100,3 +3110,19 @@ body:not(.light-mode).collaborate-page .bg-white {
         padding-bottom: 40px;
     }
 }
+
+/* TEMPORARILY DISABLED ANIMATIONS (BY USER REQUEST) */
+*, *::before, *::after {
+    animation-duration: 0s !important;
+    animation-delay: 0s !important;
+    transition-duration: 0s !important;
+    transition-delay: 0s !important;
+    animation: none !important;
+    transition: none !important;
+}
+
+html.page-loading body {
+    opacity: 1 !important;
+    pointer-events: all !important;
+}
+

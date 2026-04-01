@@ -25,7 +25,7 @@
     <link rel="icon" type="image/svg+xml" href="../assets/icons/favicon.svg">
     <style>
         .about-page {
-            background: #ffffff !important;
+            background: var(--color-bg);
         }
 
         .about-container {
@@ -257,7 +257,7 @@
 
         .marquee-content {
             display: inline-flex;
-            animation: marquee 30s linear infinite;
+            animation: marquee 30s linear infinite !important;
             gap: 80px;
         }
 
@@ -294,18 +294,33 @@
             animation-play-state: paused;
         }
 
+        /* Mobile specific speedup */
+        @media (max-width: 480px) {
+            .marquee-content {
+                animation: marquee 10s linear infinite !important;
+                gap: 40px;
+            }
+            .marquee-item {
+                font-size: 14px;
+                letter-spacing: 2px;
+            }
+            .marquee-item::after {
+                margin-left: 20px;
+            }
+        }
+
         /* Field Approach Section */
         .field-approach-section {
-            color: #1a1a1a !important;
+            color: var(--color-text);
         }
 
         .field-approach-section h2,
         .field-approach-section h4 {
-            color: #1a1a1a !important;
+            color: var(--color-text);
         }
 
         .field-approach-section p {
-            color: #555555 !important;
+            color: var(--color-text-muted);
         }
 
         .field-point {
@@ -337,7 +352,7 @@
             transform: translate(-50%, -50%);
             font-size: clamp(100px, 20vw, 250px);
             font-weight: 800;
-            color: rgba(0, 0, 0, 0.03);
+            color: var(--color-surface-alt);
             text-transform: uppercase;
             z-index: 1;
             pointer-events: none;
@@ -355,7 +370,7 @@
         .manifesto-section h2 {
             font-family: var(--font-heading);
             font-size: clamp(32px, 5vw, 42px);
-            color: #1a1a1a !important;
+            color: var(--color-text);
             margin-bottom: var(--space-8);
             line-height: 1.2;
             position: relative;
@@ -376,7 +391,7 @@
         .manifesto-section p {
             font-size: 18px;
             line-height: 1.8;
-            color: #555555 !important;
+            color: var(--color-text-muted);
             margin-bottom: var(--space-6);
         }
 
@@ -409,7 +424,7 @@
                                 </svg></a>
                             <ul class="dropdown-menu">
                                 <li><a href="../index.html">Home V1</a></li>
-                                <li><a href="../home-v2.html">Home V2</a></li>
+                                <li><a href="home-v2.html">Home V2</a></li>
                             </ul>
                         </li>
                         <li><a href="destinations.html">Destinations</a></li>
@@ -474,7 +489,7 @@
                     </svg></a>
                 <ul class="mobile-dropdown-menu">
                     <li><a href="../index.html">Home V1</a></li>
-                    <li><a href="../home-v2.html">Home V2</a></li>
+                    <li><a href="home-v2.html">Home V2</a></li>
                 </ul>
             </div>
             <a href="destinations.html">Destinations</a>
@@ -491,7 +506,6 @@
     </div>
 
     <main>
-        <!-- SECTION 1 — HERO -->
         <section class="about-hero">
             <img src="../assets/images/about/HeroSection-img.jpg" alt="Endless Horizon" class="about-hero-bg">
             <div class="about-hero-content">
@@ -515,7 +529,7 @@
                             style="width: 100%; height: 500px; object-fit: cover; object-position: center;">
                     </div>
                     <div>
-                        <h2 style="font-family: var(--font-heading); font-size: 36px; margin-bottom: var(--space-6);">
+                        <h2 style="font-family: var(--font-heading); font-size: 36px; margin-bottom: var(--space-6); color: var(--color-text);">
                             Where It Began</h2>
                         <p style="font-size: 17px; color: var(--color-text-muted); line-height: 1.8;">TerraVoyage began
                             behind a lens, born from a desire to document the silences between the highlights. What
@@ -534,14 +548,14 @@
                 <div
                     style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--space-8);">
                     <div class="mv-card">
-                        <h3 style="font-family: var(--font-heading); font-size: 28px; margin-bottom: var(--space-4);">
+                        <h3 style="font-family: var(--font-heading); font-size: 28px; margin-bottom: var(--space-4); color: var(--color-text);">
                             Our Mission</h3>
                         <p style="color: var(--color-text-muted); line-height: 1.7;">To produce cinematic narratives
                             that bridge the gap between traveler and community, fostering genuine empathy and long-term
                             cultural preservation.</p>
                     </div>
                     <div class="mv-card">
-                        <h3 style="font-family: var(--font-heading); font-size: 28px; margin-bottom: var(--space-4);">
+                        <h3 style="font-family: var(--font-heading); font-size: 28px; margin-bottom: var(--space-4); color: var(--color-text);">
                             Our Vision</h3>
                         <p style="color: var(--color-text-muted); line-height: 1.7;">A world where travel acts as a
                             catalyst for global understanding, where every journey contributes to the resilience of the
@@ -555,7 +569,7 @@
         <section style="padding: 90px 0;">
             <div class="about-container">
                 <div style="text-align: center; margin-bottom: var(--space-12);">
-                    <h2 style="font-family: var(--font-heading); font-size: 32px;">Travel With Intention</h2>
+                    <h2 style="font-family: var(--font-heading); font-size: 32px; color: var(--color-text);">Travel With Intention</h2>
                 </div>
                 <div class="grid-three-col"
                     style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-8); text-align: center;">
@@ -588,12 +602,12 @@
         <section style="padding: 90px 0;">
             <div class="about-container">
                 <div style="text-align: center; margin-bottom: var(--space-6);">
-                    <h2 style="font-family: var(--font-heading); font-size: 32px;">The People Behind TerraVoyage</h2>
+                    <h2 style="font-family: var(--font-heading); font-size: 32px; color: var(--color-text);">The People Behind TerraVoyage</h2>
                 </div>
                 <div class="team-grid">
                     <div class="team-card elena">
                         <img src="../assets/images/about/Elias Vance.jpg" alt="Elena Vance" class="team-img">
-                        <h4 style="font-size: 20px; margin-bottom: 4px;">Elena Vance</h4>
+                        <h4 style="font-size: 20px; margin-bottom: 4px; color: var(--color-text);">Elena Vance</h4>
                         <span
                             style="font-size: 12px; color: var(--color-accent); text-transform: uppercase; letter-spacing: 1px; font-weight: 600;">Founder
                             & Director</span>
@@ -603,7 +617,7 @@
                     </div>
                     <div class="team-card marcus">
                         <img src="../assets/images/about/Julian Moretti.jpg" alt="Marcus Thorne" class="team-img">
-                        <h4 style="font-size: 20px; margin-bottom: 4px;">Marcus Thorne</h4>
+                        <h4 style="font-size: 20px; margin-bottom: 4px; color: var(--color-text);">Marcus Thorne</h4>
                         <span
                             style="font-size: 12px; color: var(--color-accent); text-transform: uppercase; letter-spacing: 1px; font-weight: 600;">Lead
                             Photographer</span>
@@ -613,7 +627,7 @@
                     </div>
                     <div class="team-card sofia">
                         <img src="../assets/images/about/Sofia Romano.jpg" alt="Sofia Romano" class="team-img">
-                        <h4 style="font-size: 20px; margin-bottom: 4px;">Sofia Romano</h4>
+                        <h4 style="font-size: 20px; margin-bottom: 4px; color: var(--color-text);">Sofia Romano</h4>
                         <span
                             style="font-size: 12px; color: var(--color-accent); text-transform: uppercase; letter-spacing: 1px; font-weight: 600;">Cultural
                             Liaison</span>
@@ -626,34 +640,11 @@
             </div>
         </section>
 
-        <!-- SECTION 6 — OUR IMPACT -->
-        <section style="padding: 80px 0; border-bottom: 1px solid var(--color-border);">
-            <div class="about-container">
-                <div class="stats-row">
-                    <div class="stat-item">
-                        <span class="val">50+</span>
-                        <span class="lbl">Destinations</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="val">120+</span>
-                        <span class="lbl">Stories Documented</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="val">15</span>
-                        <span class="lbl">Cultural Partnerships</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="val">4</span>
-                        <span class="lbl">Continents</span>
-                    </div>
-                </div>
-            </div>
-        </section>
 
         <!-- SECTION 7 — ETHICAL COMMITMENT -->
         <section style="padding: 90px 0 30px;">
             <div class="about-container" style="text-align: center;">
-                <h2 style="font-family: var(--font-heading); font-size: 32px; margin-bottom: var(--space-6);">Our
+                <h2 style="font-family: var(--font-heading); font-size: 32px; margin-bottom: var(--space-6); color: var(--color-text);">Our
                     Commitment to Ethical Storytelling</h2>
                 <p
                     style="font-size: 16px; color: var(--color-text-muted); max-width: 800px; margin: 0 auto; line-height: 1.8;">
@@ -675,7 +666,7 @@
                         <span class="eyebrow"
                             style="color: var(--color-accent); font-weight: 600; text-transform: uppercase; letter-spacing: 2px; font-size: 11px; display: block; margin-bottom: var(--space-2);">FIELD
                             APPROACH</span>
-                        <h2 style="font-family: var(--font-heading); font-size: 36px; margin-bottom: var(--space-6);">
+                        <h2 style="font-family: var(--font-heading); font-size: 36px; margin-bottom: var(--space-6); color: var(--color-text);">
                             How We Work in the Field</h2>
                         <p style="font-size: 17px; line-height: 1.8; margin-bottom: var(--space-8);">True stories are
                             never rushed. We approach every journey with patience, humility, and presence — allowing
@@ -770,7 +761,7 @@
         <section style="padding: 100px 0; text-align: center;">
             <div class="about-container">
                 <h2
-                    style="font-family: var(--font-heading); font-size: clamp(32px, 5vw, 48px); margin-bottom: var(--space-4);">
+                    style="font-family: var(--font-heading); font-size: clamp(32px, 5vw, 48px); margin-bottom: var(--space-4); color: var(--color-text);">
                     Join Us on the Journey.</h2>
                 <p
                     style="font-size: 18px; color: var(--color-text-muted); max-width: 600px; margin: 0 auto var(--space-10); line-height: 1.6;">
@@ -829,6 +820,8 @@
                     <li><a href="adventures.html">Adventures</a></li>
                     <li><a href="stories.html">Stories</a></li>
                     <li><a href="about.html">About</a></li>
+                    <li><a href="404.html">404 Page</a></li>
+                    <li><a href="coming-soon.html">Coming Soon</a></li>
                 </ul>
             </div>
 
@@ -836,11 +829,10 @@
                 <h4>Company</h4>
                 <ul>
                     <li><a href="../index.html">Home V1</a></li>
-                    <li><a href="../home-v2.html">Home V2</a></li>
+                    <li><a href="home-v2.html">Home V2</a></li>
                     <li><a href="about.html">Our Story</a></li>
                     <li><a href="collaborate.html">Collaborate</a></li>
                     <li><a href="login.html">Login</a></li>
-                    <li><a href="../404.html">404 Page</a></li>
                 </ul>
             </div>
 

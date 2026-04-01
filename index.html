@@ -161,15 +161,20 @@
         }
 
         .editorial-glass-card {
-            background: #ffffff;
+            background: var(--color-surface);
             backdrop-filter: none;
             -webkit-backdrop-filter: none;
-            border: 1px solid rgba(0, 0, 0, 0.05);
+            border: 1px solid var(--color-border);
             border-radius: 20px;
             padding: 35px 40px;
             max-width: 680px;
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
             animation: fadeInGlass 1s ease-out;
+        }
+
+        [data-theme="light"] .editorial-glass-card {
+            background: #ffffff;
+            border-color: rgba(0, 0, 0, 0.05);
         }
 
         @keyframes fadeInGlass {
@@ -196,14 +201,14 @@
             font-weight: 800;
             line-height: 1.1;
             margin-bottom: var(--space-3);
-            color: #111111 !important;
+            color: var(--color-text) !important;
         }
 
         .editorial-glass-card p {
             font-size: 19px;
             line-height: 1.8;
             max-width: 600px;
-            color: #555555 !important;
+            color: var(--color-text-muted) !important;
             font-weight: 400;
         }
 
@@ -287,7 +292,7 @@
                                 </svg></a>
                             <ul class="dropdown-menu">
                                 <li><a href="index.html">Home V1</a></li>
-                                <li><a href="home-v2.html">Home V2</a></li>
+                                <li><a href="pages/home-v2.html">Home V2</a></li>
                             </ul>
                         </li>
                         <li><a href="pages/destinations.html">Destinations</a></li>
@@ -352,7 +357,7 @@
                     </svg></a>
                 <ul class="mobile-dropdown-menu">
                     <li><a href="index.html">Home V1</a></li>
-                    <li><a href="home-v2.html">Home V2</a></li>
+                    <li><a href="pages/home-v2.html">Home V2</a></li>
                 </ul>
             </div>
             <a href="pages/destinations.html">Destinations</a>
@@ -591,7 +596,10 @@
         </section>
 
         <!-- SECTION 6 — IMPACT METRICS -->
-        <section class="metrics-band bg-primary">
+        <section class="metrics-band bg-primary" style="flex-direction: column; padding: 80px 0;">
+            <div style="text-align: center; margin-bottom: 40px; width: 100%;">
+                <h2 style="color: var(--color-text); font-family: var(--font-heading); font-size: 32px;">Our Global Impact</h2>
+            </div>
             <div class="metrics-container">
                 <div style="text-align: center;">
                     <div style="font-size: 48px; font-weight: 800; color: var(--color-accent);">50+</div>
@@ -691,18 +699,19 @@
                     <li><a href="pages/adventures.html">Adventures</a></li>
                     <li><a href="pages/stories.html">Stories</a></li>
                     <li><a href="pages/about.html">About</a></li>
+                    <li><a href="pages/404.html">404 Page</a></li>
+                    <li><a href="pages/coming-soon.html">Coming Soon</a></li>
                 </ul>
             </div>
 
             <div class="footer-column">
                 <h4>Company</h4>
                 <ul>
-                    <li><a href="../index.html">Home V1</a></li>
-                    <li><a href="../home-v2.html">Home V2</a></li>
-                    <li><a href="about.html">Our Story</a></li>
-                    <li><a href="collaborate.html">Collaborate</a></li>
-                    <li><a href="login.html">Login</a></li>
-                    <li><a href="../404.html">404 Page</a></li>
+                    <li><a href="index.html">Home V1</a></li>
+                    <li><a href="pages/home-v2.html">Home V2</a></li>
+                    <li><a href="pages/about.html">Our Story</a></li>
+                    <li><a href="pages/collaborate.html">Collaborate</a></li>
+                    <li><a href="pages/login.html">Login</a></li>
                 </ul>
             </div>
 

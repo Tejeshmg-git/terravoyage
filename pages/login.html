@@ -244,6 +244,40 @@
         .back-home:hover {
             color: var(--color-accent);
         }
+
+        @media (max-width: 480px) {
+            .login-page {
+                padding: var(--space-10) var(--space-2);
+            }
+
+            .login-card {
+                padding: var(--space-6) var(--space-4);
+                border-radius: 16px;
+            }
+
+            .login-card h1 {
+                font-size: 22px;
+            }
+
+            .login-logo-wrapper span {
+                font-size: 18px;
+            }
+
+            .login-logo-wrapper img {
+                width: 28px;
+                height: 28px;
+            }
+
+            .social-buttons {
+                grid-template-columns: 1fr;
+            }
+
+            .back-home {
+                top: var(--space-4);
+                left: var(--space-4);
+                font-size: 13px;
+            }
+        }
     </style>
 </head>
 
